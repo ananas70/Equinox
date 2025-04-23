@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [global_group]
 
 ice=""
