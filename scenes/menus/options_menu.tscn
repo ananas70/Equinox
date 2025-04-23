@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bk4yaptgakjra"]
 
-[ext_resource type="Script" uid="uid://dfwx1fe5peyqr" path="res://scripts/options_menu.gd" id="1_ijpji"]
+[ext_resource type="Script" uid="uid://dfwx1fe5peyqr" path="res://scripts/menus_scripts/options_menu.gd" id="1_ijpji"]
 [ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="1_liyum"]
 [ext_resource type="Texture2D" uid="uid://lo8gk5ya1402" path="res://assets/options_menu.png" id="2_hm4m4"]
-[ext_resource type="PackedScene" uid="uid://bn278aky6vwhr" path="res://scenes/options_tab.tscn" id="4_lfjc7"]
+[ext_resource type="PackedScene" uid="uid://bn278aky6vwhr" path="res://scenes/menus/options_tab.tscn" id="4_lfjc7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lfjc7"]
 texture = ExtResource("2_hm4m4")

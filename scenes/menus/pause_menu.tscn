@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5w4qkvxwqdxs"]
 
-[ext_resource type="Script" uid="uid://douw3asn4b38x" path="res://scripts/pause_menu.gd" id="1_kukqi"]
-[ext_resource type="Texture2D" uid="uid://b87v8lh5w30bf" path="res://assets/pause_menu.png" id="1_n87rw"]
-[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="2_myx47"]
+[ext_resource type="Script" uid="uid://douw3asn4b38x" path="res://scripts/menus_scripts/pause_menu.gd" id="1_gsnt3"]
+[ext_resource type="Texture2D" uid="uid://b87v8lh5w30bf" path="res://assets/pause_menu.png" id="2_2wrho"]
+[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_gh0u6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myx47"]
-texture = ExtResource("1_n87rw")
+texture = ExtResource("2_2wrho")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kukqi"]
 bg_color = Color(0.641934, 0.641934, 0.641934, 1)
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_kukqi")
+script = ExtResource("1_gsnt3")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -52,7 +52,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kukqi")
 text = "Resume"
@@ -63,7 +63,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kukqi")
 text = "Options"
@@ -74,7 +74,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_fonts/font = ExtResource("3_gh0u6")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kukqi")
 text = "Quit"

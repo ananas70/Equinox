@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cuwv1tdatxvq1"]
 
-[ext_resource type="Texture2D" uid="uid://bydwb5cgv4gvc" path="res://assets/happy_ending.png" id="1_hs5er"]
-[ext_resource type="Script" uid="uid://bqnv8n675ynno" path="res://scripts/victory_menu.gd" id="1_y38n5"]
-[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="2_4ntwv"]
+[ext_resource type="Script" uid="uid://bqnv8n675ynno" path="res://scripts/menus_scripts/victory_menu.gd" id="1_qtocq"]
+[ext_resource type="Texture2D" uid="uid://bydwb5cgv4gvc" path="res://assets/happy_ending.png" id="2_ucpym"]
+[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_51nac"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ntwv"]
-texture = ExtResource("1_hs5er")
+texture = ExtResource("2_ucpym")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y38n5"]
 bg_color = Color(0.641934, 0.641934, 0.641934, 1)
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_y38n5")
+script = ExtResource("1_qtocq")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -48,7 +48,7 @@ grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_4ntwv")
+theme_override_fonts/normal_font = ExtResource("3_51nac")
 theme_override_font_sizes/normal_font_size = 48
 text = "YOU WON!"
 horizontal_alignment = 1
@@ -75,7 +75,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_4ntwv")
+theme_override_fonts/font = ExtResource("3_51nac")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_y38n5")
 text = "Main Menu"
@@ -86,7 +86,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_4ntwv")
+theme_override_fonts/font = ExtResource("3_51nac")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_y38n5")
 text = "Credits"
@@ -97,7 +97,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_4ntwv")
+theme_override_fonts/font = ExtResource("3_51nac")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_y38n5")
 text = "Quit"
