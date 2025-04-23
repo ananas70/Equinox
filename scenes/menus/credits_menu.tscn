@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcclonjrboww7"]
 
-[ext_resource type="Texture2D" uid="uid://nrp3hmy4gim3" path="res://assets/credits_menu.png" id="1_27l6r"]
-[ext_resource type="Script" uid="uid://ddouj08gw7c3y" path="res://scripts/credits_menu.gd" id="1_oqgs5"]
-[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="2_p38dx"]
+[ext_resource type="Script" uid="uid://ddouj08gw7c3y" path="res://scripts/menus_scripts/credits_menu.gd" id="1_xtkoc"]
+[ext_resource type="Texture2D" uid="uid://nrp3hmy4gim3" path="res://assets/credits_menu.png" id="2_d74go"]
+[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_325oc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p38dx"]
-texture = ExtResource("1_27l6r")
+texture = ExtResource("2_d74go")
 
 [node name="Credits_Menu" type="Control"]
 layout_mode = 3
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_oqgs5")
+script = ExtResource("1_xtkoc")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -31,7 +31,7 @@ offset_left = 35.0
 offset_top = 22.0
 offset_right = 352.0
 offset_bottom = 80.0
-theme_override_fonts/font = ExtResource("2_p38dx")
+theme_override_fonts/font = ExtResource("3_325oc")
 theme_override_font_sizes/font_size = 38
 text = "Return to main menu"
 
