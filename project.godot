@@ -15,22 +15,13 @@ run/main_scene="uid://n72lqpxojy0q"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+[autoload]
+
+Functions="*res://scripts/functions.gd"
+
 [global_group]
 
 ice=""
-=======
-[autoload]
-
-Functions="*res://scripts/functions.gd"
->>>>>>> Stashed changes
-=======
-[autoload]
-
-Functions="*res://scripts/functions.gd"
->>>>>>> Stashed changes
 
 [input]
 
