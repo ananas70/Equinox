@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0h51oxxdsc7q"]
+
+[ext_resource type="Texture2D" uid="uid://b14y4v018dhd0" path="res://assets/sprites/4 - Winter World/IceCube (16 x 16).png" id="1_47kvb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_31143"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3pda"]
+size = Vector2(15, 14.6667)
+
+[node name="IcePlatform" type="StaticBody2D" groups=["ice"]]
+physics_material_override = SubResource("PhysicsMaterial_31143")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(126.333, 89)
+shape = SubResource("RectangleShape2D_k3pda")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(126.333, 89)
+texture = ExtResource("1_47kvb")
