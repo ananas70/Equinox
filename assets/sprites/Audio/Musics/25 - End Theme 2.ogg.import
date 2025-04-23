@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cwf1wg4bbkprm"
+path="res://.godot/imported/25 - End Theme 2.ogg-e83c861f1d2ed31d665d9d95a4733368.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sprites/Audio/Musics/25 - End Theme 2.ogg"
+dest_files=["res://.godot/imported/25 - End Theme 2.ogg-e83c861f1d2ed31d665d9d95a4733368.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

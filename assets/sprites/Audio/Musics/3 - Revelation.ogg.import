@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://xfysb30ti82o"
+path="res://.godot/imported/3 - Revelation.ogg-3052f2f54b8471486a1c7526e41e8298.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sprites/Audio/Musics/3 - Revelation.ogg"
+dest_files=["res://.godot/imported/3 - Revelation.ogg-3052f2f54b8471486a1c7526e41e8298.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
