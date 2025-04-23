@@ -17,9 +17,15 @@ config/icon="res://icon.svg"
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [global_group]
 
 ice=""
+=======
+[autoload]
+
+Functions="*res://scripts/functions.gd"
+>>>>>>> Stashed changes
 =======
 [autoload]
 
