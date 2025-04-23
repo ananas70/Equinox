@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Equinox"
-run/main_scene="uid://djcphoe3fyk1x"
+run/main_scene="uid://n72lqpxojy0q"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+<<<<<<< Updated upstream
 [global_group]
 
 ice=""
+=======
+[autoload]
+
+Functions="*res://scripts/functions.gd"
+>>>>>>> Stashed changes
 
 [input]
 

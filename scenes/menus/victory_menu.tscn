@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cuwv1tdatxvq1"]
 
 [ext_resource type="Script" uid="uid://bqnv8n675ynno" path="res://scripts/menus_scripts/victory_menu.gd" id="1_qtocq"]
-[ext_resource type="Texture2D" uid="uid://bydwb5cgv4gvc" path="res://assets/happy_ending.png" id="2_ucpym"]
+[ext_resource type="Texture2D" uid="uid://bydwb5cgv4gvc" path="res://assets/images/for_menus/happy_ending.png" id="2_ucpym"]
 [ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_51nac"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ntwv"]
