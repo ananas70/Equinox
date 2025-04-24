@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://n72lqpxojy0q"]
+
+[ext_resource type="Script" uid="uid://cunr2t0cym48v" path="res://scripts/menus_scripts/loading_screen.gd" id="1_h0sde"]
+[ext_resource type="Texture2D" uid="uid://cvd0j8rcgtupk" path="res://assets/images/for_menus/loading_screen_backgrnd.png" id="2_8ycgy"]
+[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="2_u6do7"]
+[ext_resource type="PackedScene" uid="uid://cpiiagewok4yh" path="res://scenes/chicken.tscn" id="3_7krkx"]
+
+[sub_resource type="Gradient" id="Gradient_8ycgy"]
+offsets = PackedFloat32Array(0, 0.584746)
+colors = PackedColorArray(0.99978, 0.940199, 0.466931, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_7krkx"]
+gradient = SubResource("Gradient_8ycgy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ycgy"]
+draw_center = false
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7krkx"]
+font = ExtResource("2_u6do7")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7krkx"]
+texture = ExtResource("2_8ycgy")
+
+[node name="LoadingScreen" type="CanvasLayer"]
+script = ExtResource("1_h0sde")
+next_scene_path = "uid://cdn1s0d7160tb"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_7krkx")
+
+[node name="Label" type="Label" parent="Control"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 238.0
+offset_right = 104.0
+offset_bottom = 293.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ycgy")
+text = "Loading..."
+label_settings = SubResource("LabelSettings_7krkx")
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7krkx")
+
+[node name="Chicken" parent="." instance=ExtResource("3_7krkx")]
+position = Vector2(28, 447)

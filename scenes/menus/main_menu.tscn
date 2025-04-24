@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdn1s0d7160tb"]
 
-[ext_resource type="Script" uid="uid://dpkxqjx320x28" path="res://scripts/main_menu.gd" id="1_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://cgj4t5g6bkios" path="res://assets/main_menu_image_clean.png" id="1_l6cm7"]
-[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_bqqt6"]
+[ext_resource type="Script" uid="uid://dpkxqjx320x28" path="res://scripts/menus_scripts/main_menu.gd" id="1_2o76q"]
+[ext_resource type="Texture2D" uid="uid://cgj4t5g6bkios" path="res://assets/images/for_menus/main_menu_image_clean.png" id="2_6bivr"]
+[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_imvie"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
-texture = ExtResource("1_l6cm7")
+texture = ExtResource("2_6bivr")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vue75"]
 bg_color = Color(0.641934, 0.641934, 0.641934, 1)
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bqqt6")
+script = ExtResource("1_2o76q")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -55,7 +55,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("3_imvie")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
 text = "Start game"
@@ -66,7 +66,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("3_imvie")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
 text = "Options"
@@ -77,7 +77,7 @@ layout_mode = 2
 size_flags_vertical = 4
 size_flags_stretch_ratio = 0.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("3_imvie")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
 text = "Exit"

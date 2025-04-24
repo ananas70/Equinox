@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="Equinox"
-run/main_scene="uid://djcphoe3fyk1x"
+run/main_scene="uid://c2xhds4i3r43i"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Functions="*res://scripts/functions.gd"
 
 [display]
 
 window/stretch/mode="viewport"
+
+[global_group]
+
+ice=""
 
 [input]
 

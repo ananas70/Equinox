@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpiiagewok4yh"]
+
+[ext_resource type="Script" uid="uid://dvrv8s3oielgl" path="res://scripts/chicken.gd" id="1_1yv3s"]
+[ext_resource type="Texture2D" uid="uid://b2itrkgco73ly" path="res://assets/sprites/Actor/Animals/Chicken/SpriteSheetCute.png" id="1_8lku0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yv3s"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nutj5"]
+atlas = ExtResource("1_8lku0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rc7ma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yv3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nutj5")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
+
+[node name="Chicken" type="Node2D"]
+script = ExtResource("1_1yv3s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(36, 33.5)
+scale = Vector2(5.5, 5.1875)
+sprite_frames = SubResource("SpriteFrames_rc7ma")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.744123
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(36, 46)
+target_position = Vector2(45, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(35, 46)
+target_position = Vector2(-43, 0)

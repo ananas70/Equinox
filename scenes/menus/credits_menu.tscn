@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcclonjrboww7"]
+
+[ext_resource type="Script" uid="uid://ddouj08gw7c3y" path="res://scripts/menus_scripts/credits_menu.gd" id="1_xtkoc"]
+[ext_resource type="Texture2D" uid="uid://nrp3hmy4gim3" path="res://assets/images/for_menus/credits_menu.png" id="2_d74go"]
+[ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_325oc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p38dx"]
+texture = ExtResource("2_d74go")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtkoc"]
+bg_color = Color(0.641934, 0.641934, 0.641934, 1)
+corner_radius_top_left = 17
+corner_radius_top_right = 17
+corner_radius_bottom_right = 17
+corner_radius_bottom_left = 17
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="Credits_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xtkoc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p38dx")
+
+[node name="Return" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 50)
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 332.0
+offset_bottom = 67.0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_325oc")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_xtkoc")
+text = "Return to main menu"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

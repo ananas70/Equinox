@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bydwb5cgv4gvc"
-path="res://.godot/imported/happy_ending.png-f5c57ef160085cc7963ab38768908cbb.ctex"
+uid="uid://lo8gk5ya1402"
+path="res://.godot/imported/options_menu.png-ff5a0606f030a31a0ca6a2c182699c25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/happy_ending.png"
-dest_files=["res://.godot/imported/happy_ending.png-f5c57ef160085cc7963ab38768908cbb.ctex"]
+source_file="res://assets/images/for_menus/options_menu.png"
+dest_files=["res://.godot/imported/options_menu.png-ff5a0606f030a31a0ca6a2c182699c25.ctex"]
 
 [params]
 
