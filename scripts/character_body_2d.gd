@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const NORMAL_SPEED = 400.0
 const ICE_SPEED = 600.0
-const JUMP_VELOCITY = -800.0
+const JUMP_VELOCITY = -900.0
 const SLIDE_DECELERATION = 0.5
 const NORMAL_DECELERATION = 40
 const SLIDE_GRACE_TIME = 0.00035 * ICE_SPEED  # Half a second of sliding after ice
