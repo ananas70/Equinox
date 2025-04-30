@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c2xhds4i3r43i"]
+[gd_scene load_steps=29 format=3 uid="uid://c2xhds4i3r43i"]
 
 [ext_resource type="Texture2D" uid="uid://dt2xdddsw2w2i" path="res://assets/sprites/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="1_5k8ae"]
 [ext_resource type="Texture2D" uid="uid://ceo8awu6m5ht7" path="res://assets/sprites/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_l7b1u"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dydila04ouiux" path="res://scenes/character_body_2d.tscn" id="9_l7b1u"]
 [ext_resource type="PackedScene" uid="uid://b84j4bowqcapy" path="res://scenes/spring_scenes/collectable.tscn" id="10_rykpp"]
 [ext_resource type="Script" uid="uid://bfnjpmxxbt4d" path="res://scripts/game_manager.gd" id="11_4vs00"]
+[ext_resource type="Texture2D" uid="uid://dbxnj8m7vls5l" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.35_3f0a781d.jpg" id="12_lhmhx"]
+[ext_resource type="Texture2D" uid="uid://6wukhlke3bx8" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.35_a69e9d7a.jpg" id="13_deqru"]
+[ext_resource type="Texture2D" uid="uid://bf3ibv70b2qmi" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.35_7cc32d50.jpg" id="14_bgp0r"]
+[ext_resource type="Texture2D" uid="uid://dceypgfu4wilb" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.34_1107a2b9.jpg" id="15_jk3jx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deqru"]
 texture = ExtResource("2_l7b1u")
@@ -223,6 +227,30 @@ sources/4 = SubResource("TileSetAtlasSource_fb5v4")
 sources/5 = SubResource("TileSetAtlasSource_ajckd")
 sources/7 = SubResource("TileSetAtlasSource_l7b1u")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ifvj5"]
+bg_color = Color(0.954911, 0.97753, 0.948347, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.0338533, 0.0338533, 0.0338532, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fb5v4"]
+bg_color = Color(0.0390195, 0.00667565, 0.00145387, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajckd"]
+bg_color = Color(0.00820202, 0.00820203, 0.00820202, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v350"]
+bg_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox4nh"]
+bg_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+
 [node name="SpringLevel" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -256,26 +284,107 @@ position = Vector2(646, 383)
 unique_name_in_owner = true
 script = ExtResource("11_4vs00")
 
-[node name="UI" type="CanvasLayer" parent="."]
+[node name="PlayerInfoBox" type="Panel" parent="."]
+offset_right = 235.0
+offset_bottom = 73.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ifvj5")
 
-[node name="Panel" type="Panel" parent="UI"]
-offset_left = 23.0
-offset_top = 12.0
-offset_right = 217.0
-offset_bottom = 77.0
-
-[node name="Label" type="Label" parent="UI/Panel"]
-unique_name_in_owner = true
+[node name="Autumn" type="Panel" parent="PlayerInfoBox"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -22.5
+offset_right = 62.0
+offset_bottom = 21.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fb5v4")
+
+[node name="Autumn" type="TextureRect" parent="PlayerInfoBox/Autumn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 17
-text = "Object collected: FALSE"
-horizontal_alignment = 1
-vertical_alignment = 1
+texture = ExtResource("12_lhmhx")
+expand_mode = 1
+
+[node name="Winter" type="Panel" parent="PlayerInfoBox"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 14.0
+offset_right = 114.0
+offset_bottom = 58.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ajckd")
+
+[node name="TextureRect" type="TextureRect" parent="PlayerInfoBox/Winter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_deqru")
+expand_mode = 1
+
+[node name="Spring" type="Panel" parent="PlayerInfoBox"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 14.0
+offset_right = 166.0
+offset_bottom = 58.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3v350")
+
+[node name="TextureRect" type="TextureRect" parent="PlayerInfoBox/Spring"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_bgp0r")
+expand_mode = 1
+
+[node name="Summer" type="Panel" parent="PlayerInfoBox"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 14.0
+offset_right = 218.0
+offset_bottom = 58.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ox4nh")
+
+[node name="TextureRect" type="TextureRect" parent="PlayerInfoBox/Summer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_jk3jx")
+expand_mode = 1
