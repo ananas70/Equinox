@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dydila04ouiux" path="res://scenes/character_body_2d.tscn" id="9_l7b1u"]
 [ext_resource type="PackedScene" uid="uid://b84j4bowqcapy" path="res://scenes/spring_scenes/collectable.tscn" id="10_rykpp"]
 [ext_resource type="Script" uid="uid://bfnjpmxxbt4d" path="res://scripts/game_manager.gd" id="11_4vs00"]
-[ext_resource type="Texture2D" uid="uid://dbxnj8m7vls5l" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.35_3f0a781d.jpg" id="12_lhmhx"]
-[ext_resource type="Texture2D" uid="uid://6wukhlke3bx8" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.35_a69e9d7a.jpg" id="13_deqru"]
-[ext_resource type="Texture2D" uid="uid://bf3ibv70b2qmi" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.35_7cc32d50.jpg" id="14_bgp0r"]
-[ext_resource type="Texture2D" uid="uid://dceypgfu4wilb" path="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.34_1107a2b9.jpg" id="15_jk3jx"]
+[ext_resource type="Texture2D" uid="uid://bdmkjtltqg3he" path="res://assets/images/UI/ChatGPT Image Apr 30, 2025, 04_57_05 PM.png" id="12_lhmhx"]
+[ext_resource type="Texture2D" uid="uid://bek35tbjarr8f" path="res://assets/images/UI/ChatGPT_Image_30_apr._2025,_16_46_52[1].png" id="13_deqru"]
+[ext_resource type="Texture2D" uid="uid://c5sjwsrks4qy" path="res://assets/images/UI/spring_brightened[1].png" id="14_bgp0r"]
+[ext_resource type="Texture2D" uid="uid://06ttca5fxekl" path="res://assets/images/UI/ChatGPT_Image_30_apr._2025,_16_46_54[1].png" id="15_jk3jx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deqru"]
 texture = ExtResource("2_l7b1u")
@@ -255,7 +255,8 @@ bg_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_right = 2120.0
+offset_left = 1.0
+offset_right = 2121.0
 offset_bottom = 676.0
 texture = ExtResource("1_5k8ae")
 
@@ -266,6 +267,8 @@ position = Vector2(231, 353)
 position = Vector2(-23, -180.667)
 scale = Vector2(0.333333, 0.333333)
 zoom = Vector2(0.5, 0.5)
+limit_top = 300
+limit_right = 300
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
@@ -285,8 +288,10 @@ unique_name_in_owner = true
 script = ExtResource("11_4vs00")
 
 [node name="PlayerInfoBox" type="Panel" parent="."]
-offset_right = 235.0
-offset_bottom = 73.0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 221.0
+offset_bottom = 62.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ifvj5")
 
 [node name="Autumn" type="Panel" parent="PlayerInfoBox"]
@@ -294,9 +299,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 15.0
+offset_left = 10.0
 offset_top = -22.5
-offset_right = 62.0
+offset_right = 57.0
 offset_bottom = 21.5
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_fb5v4")
@@ -319,10 +324,10 @@ expand_mode = 1
 
 [node name="Winter" type="Panel" parent="PlayerInfoBox"]
 layout_mode = 0
-offset_left = 67.0
-offset_top = 14.0
-offset_right = 114.0
-offset_bottom = 58.0
+offset_left = 62.0
+offset_top = 9.5
+offset_right = 109.0
+offset_bottom = 53.5
 theme_override_styles/panel = SubResource("StyleBoxFlat_ajckd")
 
 [node name="TextureRect" type="TextureRect" parent="PlayerInfoBox/Winter"]
@@ -343,10 +348,10 @@ expand_mode = 1
 
 [node name="Spring" type="Panel" parent="PlayerInfoBox"]
 layout_mode = 0
-offset_left = 119.0
-offset_top = 14.0
-offset_right = 166.0
-offset_bottom = 58.0
+offset_left = 114.0
+offset_top = 9.5
+offset_right = 161.0
+offset_bottom = 53.5
 theme_override_styles/panel = SubResource("StyleBoxFlat_3v350")
 
 [node name="TextureRect" type="TextureRect" parent="PlayerInfoBox/Spring"]
@@ -367,10 +372,10 @@ expand_mode = 1
 
 [node name="Summer" type="Panel" parent="PlayerInfoBox"]
 layout_mode = 0
-offset_left = 171.0
-offset_top = 14.0
-offset_right = 218.0
-offset_bottom = 58.0
+offset_left = 166.0
+offset_top = 9.5
+offset_right = 213.0
+offset_bottom = 53.5
 theme_override_styles/panel = SubResource("StyleBoxFlat_ox4nh")
 
 [node name="TextureRect" type="TextureRect" parent="PlayerInfoBox/Summer"]
