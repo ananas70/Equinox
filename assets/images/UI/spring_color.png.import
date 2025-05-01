@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdmkjtltqg3he"
-path="res://.godot/imported/ChatGPT Image Apr 30, 2025, 04_57_05 PM.png-e7e15ad0220a9d1c8955ae72cb0c89f7.ctex"
+uid="uid://c5sjwsrks4qy"
+path="res://.godot/imported/spring_color.png-e003209a309fd7de3d51d25712ade9d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/UI/ChatGPT Image Apr 30, 2025, 04_57_05 PM.png"
-dest_files=["res://.godot/imported/ChatGPT Image Apr 30, 2025, 04_57_05 PM.png-e7e15ad0220a9d1c8955ae72cb0c89f7.ctex"]
+source_file="res://assets/images/UI/spring_color.png"
+dest_files=["res://.godot/imported/spring_color.png-e003209a309fd7de3d51d25712ade9d9.ctex"]
 
 [params]
 

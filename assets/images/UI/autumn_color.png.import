@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5sjwsrks4qy"
-path="res://.godot/imported/spring_brightened[1].png-79eacb3345a08e1984bba926b095cc9c.ctex"
+uid="uid://bdmkjtltqg3he"
+path="res://.godot/imported/autumn_color.png-db18fbfa7c79560ba1120a92948c9582.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/UI/spring_brightened[1].png"
-dest_files=["res://.godot/imported/spring_brightened[1].png-79eacb3345a08e1984bba926b095cc9c.ctex"]
+source_file="res://assets/images/UI/autumn_color.png"
+dest_files=["res://.godot/imported/autumn_color.png-db18fbfa7c79560ba1120a92948c9582.ctex"]
 
 [params]
 

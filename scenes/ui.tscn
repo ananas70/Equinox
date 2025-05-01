@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmcc5mbaxveju"]
+
+[ext_resource type="Texture2D" uid="uid://bdmkjtltqg3he" path="res://assets/images/UI/autumn_color.png" id="1_gdt2y"]
+[ext_resource type="Script" uid="uid://dj6g6c0wxehia" path="res://scripts/ui.gd" id="1_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://bek35tbjarr8f" path="res://assets/images/UI/winter_color.png" id="2_wm3ai"]
+[ext_resource type="Texture2D" uid="uid://c5sjwsrks4qy" path="res://assets/images/UI/spring_color.png" id="3_8dubc"]
+[ext_resource type="Texture2D" uid="uid://06ttca5fxekl" path="res://assets/images/UI/summer_color.png" id="4_p7vwb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktti3"]
+bg_color = Color(0.954911, 0.97753, 0.948347, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.0338533, 0.0338533, 0.0338532, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgfq5"]
+bg_color = Color(0.0390195, 0.00667565, 0.00145387, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dvkv"]
+bg_color = Color(0.00820202, 0.00820203, 0.00820202, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vdcm2"]
+bg_color = Color(0.0253638, 0.0253638, 0.0253638, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rmj2"]
+bg_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_wm3ai")
+
+[node name="PlayerInfoBox" type="Panel" parent="."]
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 221.0
+offset_bottom = 62.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ktti3")
+
+[node name="Autumn" type="Panel" parent="PlayerInfoBox"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = -22.5
+offset_right = 57.0
+offset_bottom = 21.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgfq5")
+
+[node name="Autumn" type="TextureRect" parent="PlayerInfoBox/Autumn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gdt2y")
+expand_mode = 1
+
+[node name="Winter" type="Panel" parent="PlayerInfoBox"]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 9.5
+offset_right = 109.0
+offset_bottom = 53.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dvkv")
+
+[node name="Winter" type="TextureRect" parent="PlayerInfoBox/Winter"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wm3ai")
+expand_mode = 1
+
+[node name="Spring" type="Panel" parent="PlayerInfoBox"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 9.5
+offset_right = 161.0
+offset_bottom = 53.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_vdcm2")
+
+[node name="Spring" type="TextureRect" parent="PlayerInfoBox/Spring"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8dubc")
+expand_mode = 1
+
+[node name="Summer" type="Panel" parent="PlayerInfoBox"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 9.5
+offset_right = 213.0
+offset_bottom = 53.5
+theme_override_styles/panel = SubResource("StyleBoxFlat_6rmj2")
+
+[node name="Summer" type="TextureRect" parent="PlayerInfoBox/Summer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_p7vwb")
+expand_mode = 1

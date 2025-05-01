@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bek35tbjarr8f"
-path="res://.godot/imported/ChatGPT_Image_30_apr._2025,_16_46_52[1].png-ebf2d0be8d115e61fa679d31bcb39427.ctex"
+uid="uid://do4q0v2gb21me"
+path="res://.godot/imported/autumn_gray.png-2e9faf2de630fdc20c3a582879501577.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/UI/ChatGPT_Image_30_apr._2025,_16_46_52[1].png"
-dest_files=["res://.godot/imported/ChatGPT_Image_30_apr._2025,_16_46_52[1].png-ebf2d0be8d115e61fa679d31bcb39427.ctex"]
+source_file="res://assets/images/UI/autumn_gray.png"
+dest_files=["res://.godot/imported/autumn_gray.png-2e9faf2de630fdc20c3a582879501577.ctex"]
 
 [params]
 

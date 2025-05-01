@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6wukhlke3bx8"
-path="res://.godot/imported/Imagine WhatsApp 2025-04-30 la 12.01.35_a69e9d7a.jpg-4835d022d7079c25bcf787534aa6053a.ctex"
+uid="uid://bek35tbjarr8f"
+path="res://.godot/imported/winter_color.png-5a20f395a5a265f8703c9a6301680445.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/UI/Imagine WhatsApp 2025-04-30 la 12.01.35_a69e9d7a.jpg"
-dest_files=["res://.godot/imported/Imagine WhatsApp 2025-04-30 la 12.01.35_a69e9d7a.jpg-4835d022d7079c25bcf787534aa6053a.ctex"]
+source_file="res://assets/images/UI/winter_color.png"
+dest_files=["res://.godot/imported/winter_color.png-5a20f395a5a265f8703c9a6301680445.ctex"]
 
 [params]
 
