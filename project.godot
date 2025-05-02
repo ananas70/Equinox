@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Equinox"
-run/main_scene="uid://c2xhds4i3r43i"
+run/main_scene="uid://djcphoe3fyk1x"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
