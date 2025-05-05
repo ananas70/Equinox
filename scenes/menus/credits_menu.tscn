@@ -36,6 +36,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_p38dx")
 
 [node name="Return" type="Button" parent="."]
 custom_minimum_size = Vector2(100, 50)
+layout_mode = 0
 offset_left = 35.0
 offset_top = 17.0
 offset_right = 332.0
