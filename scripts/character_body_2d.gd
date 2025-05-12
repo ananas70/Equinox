@@ -11,6 +11,8 @@ const SLIDE_GRACE_TIME = 0.00035 * ICE_SPEED  # Half a second of sliding after i
 
 var slide_timer = 0.0
 
+var in_wind := false
+
 func _physics_process(delta: float) -> void:
 	# Add gravity
 	if not is_on_floor():
@@ -35,6 +37,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		slide_timer = max(slide_timer - delta, 0)  # Countdown
 		speed = NORMAL_SPEED
+		
+	# Handle wind gliding
+	if in_wind:
+		velocity.y += -300
 
 	# Adjust deceleration
 	var direction := Input.get_axis("left", "right")
