@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://djaia4i4k11ce"]
+
+[ext_resource type="Texture2D" uid="uid://kjo2aft02nqy" path="res://assets/sprites/Actor/Monsters/Mushroom/mushroom.png" id="1_t81yl"]
+[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/autumn_scenes/killzone.tscn" id="2_ebhrm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebhrm"]
+atlas = ExtResource("1_t81yl")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td5ls"]
+atlas = ExtResource("1_t81yl")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c46a"]
+atlas = ExtResource("1_t81yl")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xentc"]
+atlas = ExtResource("1_t81yl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g70c2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebhrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td5ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c46a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xentc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td5ls"]
+size = Vector2(18, 16)
+
+[node name="Mushroom" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g70c2")
+autoplay = "default"
+frame = 1
+frame_progress = 0.603149
+
+[node name="Killzone" parent="." instance=ExtResource("2_ebhrm")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("RectangleShape2D_td5ls")

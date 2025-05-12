@@ -75,6 +75,7 @@ size = Vector2(14.3333, 17)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(3, 3)
+collision_layer = 2
 script = ExtResource("1_gbxxo")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
