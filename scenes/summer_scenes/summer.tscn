@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://b5b1bn1xjad1i"]
 
 [ext_resource type="Texture2D" uid="uid://cd4hh4wv51ax8" path="res://assets/sprites/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="1_iujmj"]
-[ext_resource type="Texture2D" uid="uid://dk18fo35l2fe4" path="res://assets/sprites/3 - Tropics/Background parts/Terrain (16 x 16).png" id="2_3v0kh"]
+[ext_resource type="Texture2D" uid="uid://dk18fo35l2fe4" path="res://assets/sprites/3 - Tropics/Terrain (16 x 16).png" id="2_3v0kh"]
 [ext_resource type="Texture2D" uid="uid://b3xtkdw1rh5b4" path="res://assets/sprites/3 - Tropics/Tropics_entities (16 x 16).png" id="3_h6afr"]
 [ext_resource type="Texture2D" uid="uid://ceo8awu6m5ht7" path="res://assets/sprites/5 - Misc. universal tiles/Blocks (16 x 16).png" id="4_t7xgw"]
 [ext_resource type="Texture2D" uid="uid://b3r7jwpjkk45a" path="res://assets/sprites/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="5_le1ow"]

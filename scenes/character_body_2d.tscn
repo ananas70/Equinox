@@ -75,6 +75,7 @@ size = Vector2(14.3333, 17)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(3, 3)
+collision_layer = 2
 script = ExtResource("1_gbxxo")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -89,3 +90,6 @@ frame_progress = 0.917905
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.83333, 1.83333)
 shape = SubResource("RectangleShape2D_gbxxo")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(0, 12.6667)

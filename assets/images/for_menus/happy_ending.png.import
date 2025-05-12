@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bowq5h6cukkp5"
-path="res://.godot/imported/Terrain (16 x 16).png-fb5127380c3ee2db95e5d04ce7b6777c.ctex"
+uid="uid://bydwb5cgv4gvc"
+path="res://.godot/imported/happy_ending.png-332092a7605acfd073d172ec4b83ac7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/3 - Tropics/Background parts/Terrain (16 x 16).png"
-dest_files=["res://.godot/imported/Terrain (16 x 16).png-fb5127380c3ee2db95e5d04ce7b6777c.ctex"]
+source_file="res://assets/images/for_menus/happy_ending.png"
+dest_files=["res://.godot/imported/happy_ending.png-332092a7605acfd073d172ec4b83ac7d.ctex"]
 
 [params]
 

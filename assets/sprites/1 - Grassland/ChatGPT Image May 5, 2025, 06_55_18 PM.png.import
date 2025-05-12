@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bowq5h6cukkp5"
-path="res://.godot/imported/Terrain (16 x 16).png-fb5127380c3ee2db95e5d04ce7b6777c.ctex"
+uid="uid://dg6s3nx8ngcbt"
+path="res://.godot/imported/ChatGPT Image May 5, 2025, 06_55_18 PM.png-d3b738effad38dc0341a0459d633ff63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/3 - Tropics/Background parts/Terrain (16 x 16).png"
-dest_files=["res://.godot/imported/Terrain (16 x 16).png-fb5127380c3ee2db95e5d04ce7b6777c.ctex"]
+source_file="res://assets/sprites/1 - Grassland/ChatGPT Image May 5, 2025, 06_55_18 PM.png"
+dest_files=["res://.godot/imported/ChatGPT Image May 5, 2025, 06_55_18 PM.png-d3b738effad38dc0341a0459d633ff63.ctex"]
 
 [params]
 

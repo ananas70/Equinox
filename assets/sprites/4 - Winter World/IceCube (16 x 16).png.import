@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bowq5h6cukkp5"
-path="res://.godot/imported/Terrain (16 x 16).png-fb5127380c3ee2db95e5d04ce7b6777c.ctex"
+uid="uid://b14y4v018dhd0"
+path="res://.godot/imported/IceCube (16 x 16).png-927fba6260ca30b20b93269bb40578c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/3 - Tropics/Background parts/Terrain (16 x 16).png"
-dest_files=["res://.godot/imported/Terrain (16 x 16).png-fb5127380c3ee2db95e5d04ce7b6777c.ctex"]
+source_file="res://assets/sprites/4 - Winter World/IceCube (16 x 16).png"
+dest_files=["res://.godot/imported/IceCube (16 x 16).png-927fba6260ca30b20b93269bb40578c9.ctex"]
 
 [params]
 

@@ -1,8 +1,15 @@
 extends CharacterBody2D
 
-const SPEED = 400.0
-const JUMP_VELOCITY = -800.0
+const NORMAL_SPEED = 400.0
+const ICE_SPEED = 600.0
+const JUMP_VELOCITY = -900.0
+const SLIDE_DECELERATION = 0.5
+const NORMAL_DECELERATION = 40
+const SLIDE_GRACE_TIME = 0.00035 * ICE_SPEED  # Half a second of sliding after ice
+
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+
+var slide_timer = 0.0
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -13,12 +20,33 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Movement
+	# Detect ice
+	var is_on_ice = false
+	if is_on_floor() and $RayCast2D.is_colliding():
+		var floor_type = $RayCast2D.get_collider()
+		if floor_type and floor_type.is_in_group("ice"):
+			is_on_ice = true
+
+	# Handle sliding logic
+	var speed
+	if is_on_ice:
+		slide_timer = SLIDE_GRACE_TIME  # Reset slide timer when on ice
+		speed = ICE_SPEED
+	else:
+		slide_timer = max(slide_timer - delta, 0)  # Countdown
+		speed = NORMAL_SPEED
+
+	# Adjust deceleration
 	var direction := Input.get_axis("left", "right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, 12)
+		var deceleration 
+		if slide_timer > 0:
+			deceleration = SLIDE_DECELERATION
+		else:
+			deceleration = NORMAL_DECELERATION
+		velocity.x = move_toward(velocity.x, 0, deceleration)
 
 	move_and_slide()
 
@@ -26,7 +54,7 @@ func _physics_process(delta: float) -> void:
 	var isLeft = velocity.x < 0
 	sprite_2d.flip_h = isLeft
 
-	# Animations (prioritate: jumping > running > idle)
+	# Animations
 	if not is_on_floor():
 		sprite_2d.animation = "jumping"
 	elif abs(velocity.x) > 1:
