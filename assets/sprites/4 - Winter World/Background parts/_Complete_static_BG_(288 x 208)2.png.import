@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76csn06w7lef"
-path="res://.godot/imported/_Complete_static_BG_(288 x 208).png-0ba47e9162cf3af9ad84c8970f009715.ctex"
+uid="uid://cq15h25v0qtyg"
+path="res://.godot/imported/_Complete_static_BG_(288 x 208)2.png-d69c22382791c959419fb0f46816d2b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208).png"
-dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208).png-0ba47e9162cf3af9ad84c8970f009715.ctex"]
+source_file="res://assets/sprites/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208)2.png"
+dest_files=["res://.godot/imported/_Complete_static_BG_(288 x 208)2.png-d69c22382791c959419fb0f46816d2b6.ctex"]
 
 [params]
 
