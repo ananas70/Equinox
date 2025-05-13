@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://djaia4i4k11ce"]
 
 [ext_resource type="Texture2D" uid="uid://kjo2aft02nqy" path="res://assets/sprites/Actor/Monsters/Mushroom/mushroom.png" id="1_t81yl"]
-[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/autumn_scenes/killzone.tscn" id="2_ebhrm"]
+[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="2_ebhrm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebhrm"]
 atlas = ExtResource("1_t81yl")
