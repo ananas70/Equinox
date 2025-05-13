@@ -42,7 +42,7 @@ texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8ig55")
 autoplay = "default"
-frame_progress = 0.0406021
+frame_progress = 0.793894
 flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("2_g67hh")]
