@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dydila04ouiux"]
+[gd_scene load_steps=15 format=3 uid="uid://dydila04ouiux"]
 
 [ext_resource type="Script" uid="uid://duspq8y8ug708" path="res://scripts/character_body_2d.gd" id="1_gbxxo"]
 [ext_resource type="Texture2D" uid="uid://djo15cox0hh2f" path="res://assets/MaskFrog/SpriteSheet.png" id="2_gbxxo"]
@@ -30,6 +30,18 @@ region = Rect2(48, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0wgi"]
 atlas = ExtResource("2_gbxxo")
 region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vejd"]
+atlas = ExtResource("2_gbxxo")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4c7"]
+atlas = ExtResource("2_gbxxo")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2brh"]
+atlas = ExtResource("2_gbxxo")
+region = Rect2(32, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2kmf7"]
 animations = [{
@@ -68,6 +80,20 @@ animations = [{
 "loop": true,
 "name": &"running",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_4vejd")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_dn4c7")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_g2brh")
+}],
+"loop": true,
+"name": &"slipping",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbxxo"]
@@ -83,9 +109,8 @@ texture_filter = 1
 position = Vector2(2.41667, 1.33333)
 scale = Vector2(1.28431, 1.14815)
 sprite_frames = SubResource("SpriteFrames_2kmf7")
-animation = &"jumping"
 autoplay = "default"
-frame_progress = 0.917905
+frame_progress = 0.65416
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.83333, 1.83333)
