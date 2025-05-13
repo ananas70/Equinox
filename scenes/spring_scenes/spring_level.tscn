@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dmcc5mbaxveju" path="res://scenes/ui.tscn" id="12_gsiqk"]
 [ext_resource type="Texture2D" uid="uid://djkpweq4edfsj" path="res://assets/sprites/1 - Grassland/Fence 1.png" id="14_ox4nh"]
 [ext_resource type="Texture2D" uid="uid://c35cte8nwnqab" path="res://assets/sprites/1 - Grassland/Flower 1.png" id="15_5lcds"]
-[ext_resource type="Script" uid="uid://djvtl2my1jher" path="res://scenes/spring_scenes/dropinwater.gd" id="15_lhmhx"]
+[ext_resource type="Script" path="res://scenes/spring_scenes/dropinwater.gd" id="15_lhmhx"]
 [ext_resource type="Texture2D" uid="uid://bopel53gunxtj" path="res://assets/sprites/Actor/Monsters/AxolotBlue/SpriteSheet.png" id="20_uxycy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deqru"]

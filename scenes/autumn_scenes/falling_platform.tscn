@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0iis8pkq4fd5"]
+
+[ext_resource type="Script" uid="uid://f87235v0l8x5" path="res://scripts/autumn_scripts/falling_platform.gd" id="1_ue6lb"]
+[ext_resource type="Texture2D" uid="uid://cao44gtuskwcy" path="res://assets/sprites/2 - Autumn Forest/Autumn_entities (16 x 16).png" id="2_20g2g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scxjd"]
+texture = ExtResource("2_20g2g")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+14:4/0 = 0
+16:4/0 = 0
+18:4/0 = 0
+1:5/0 = 0
+3:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cdj0p"]
+sources/0 = SubResource("TileSetAtlasSource_scxjd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ue6lb"]
+size = Vector2(16, 3)
+
+[node name="FallingPlatform" type="RigidBody2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+collision_mask = 2
+gravity_scale = 0.4
+lock_rotation = true
+freeze = true
+script = ExtResource("1_ue6lb")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 13)
+tile_set = SubResource("TileSet_cdj0p")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1, 983040, 3)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 14)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-8, -14.5)
+shape = SubResource("RectangleShape2D_ue6lb")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
