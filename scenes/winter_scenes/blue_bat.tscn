@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4q6hmsb28io1"]
+
+[ext_resource type="Texture2D" uid="uid://8jy03k7wefbj" path="res://assets/sprites/Actor/Monsters/BlueBat/SpriteSheet.png" id="1_k0x38"]
+[ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="2_g67hh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qawt8"]
+atlas = ExtResource("1_k0x38")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bhc0"]
+atlas = ExtResource("1_k0x38")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55evy"]
+atlas = ExtResource("1_k0x38")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ig55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qawt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bhc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55evy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0x38"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
+size = Vector2(14, 12)
+
+[node name="BlueBat" type="CharacterBody2D"]
+
+[node name="BlueBat" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_8ig55")
+autoplay = "default"
+frame_progress = 0.783659
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k0x38")
+
+[node name="Killzone" parent="." instance=ExtResource("2_g67hh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("RectangleShape2D_astmt")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 0)

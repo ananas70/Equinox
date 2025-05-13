@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://c2xhds4i3r43i"]
+[gd_scene load_steps=50 format=3 uid="uid://c2xhds4i3r43i"]
 
 [ext_resource type="Texture2D" uid="uid://dt2xdddsw2w2i" path="res://assets/sprites/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="1_5k8ae"]
 [ext_resource type="Texture2D" uid="uid://ceo8awu6m5ht7" path="res://assets/sprites/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_l7b1u"]
@@ -21,8 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://dmcc5mbaxveju" path="res://scenes/ui.tscn" id="12_gsiqk"]
 [ext_resource type="Texture2D" uid="uid://djkpweq4edfsj" path="res://assets/sprites/1 - Grassland/Fence 1.png" id="14_ox4nh"]
 [ext_resource type="Texture2D" uid="uid://c35cte8nwnqab" path="res://assets/sprites/1 - Grassland/Flower 1.png" id="15_5lcds"]
-[ext_resource type="Script" path="res://scenes/spring_scenes/dropinwater.gd" id="15_lhmhx"]
 [ext_resource type="Texture2D" uid="uid://bopel53gunxtj" path="res://assets/sprites/Actor/Monsters/AxolotBlue/SpriteSheet.png" id="20_uxycy"]
+[ext_resource type="Script" uid="uid://kn6m8n68slyy" path="res://scenes/spring_scenes/axolot_blue.gd" id="22_uxycy"]
+[ext_resource type="PackedScene" uid="uid://c141t8yo365ph" path="res://scenes/spring_scenes/killzone.tscn" id="23_5lcds"]
+[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/autumn_scenes/killzone.tscn" id="23_ox4nh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deqru"]
 texture = ExtResource("2_l7b1u")
@@ -1643,9 +1645,6 @@ sources/13 = SubResource("TileSetAtlasSource_3v350")
 sources/14 = SubResource("TileSetAtlasSource_uxycy")
 sources/15 = SubResource("TileSetAtlasSource_yrirn")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_deqru"]
-distance = 16.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrirn"]
 atlas = ExtResource("20_uxycy")
 region = Rect2(0, 0, 16, 16)
@@ -1681,6 +1680,11 @@ animations = [{
 "name": &"default",
 "speed": 15.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22yi7"]
+size = Vector2(64, 52)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5lcds"]
 
 [node name="SpringLevel" type="Node"]
 
@@ -1759,6 +1763,7 @@ layer_0/tile_data = PackedInt32Array(786439, 131076, 3, 786440, 131076, 3, 65536
 
 [node name="Collectable" parent="." instance=ExtResource("10_rykpp")]
 position = Vector2(745, 218)
+collision_mask = 2
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -1766,22 +1771,36 @@ script = ExtResource("11_4vs00")
 
 [node name="UI" parent="." instance=ExtResource("12_gsiqk")]
 
-[node name="Dropinwater" type="Area2D" parent="."]
-position = Vector2(785, 780)
-script = ExtResource("15_lhmhx")
+[node name="AxolotBlue" type="Node2D" parent="."]
+script = ExtResource("22_uxycy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dropinwater"]
-position = Vector2(-4, 6)
-shape = SubResource("WorldBoundaryShape2D_deqru")
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+[node name="AxolotBlue" type="AnimatedSprite2D" parent="AxolotBlue"]
 texture_filter = 1
-position = Vector2(674, 407)
+position = Vector2(996, 554)
 scale = Vector2(4.03125, 3.34375)
 sprite_frames = SubResource("SpriteFrames_vmojs")
 autoplay = "default"
 frame_progress = 0.542211
 
-[connection signal="body_entered" from="Dropinwater" to="Dropinwater" method="_on_body_entered"]
+[node name="Killzone" parent="AxolotBlue" instance=ExtResource("23_5lcds")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AxolotBlue/Killzone"]
+position = Vector2(998, 552)
+shape = SubResource("RectangleShape2D_22yi7")
+
+[node name="RayCastRight" type="RayCast2D" parent="AxolotBlue"]
+position = Vector2(998, 550)
+target_position = Vector2(31, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="AxolotBlue"]
+position = Vector2(997, 549)
+target_position = Vector2(-32, 1)
+
+[node name="Killzone" parent="." instance=ExtResource("23_ox4nh")]
+texture_filter = 1
+position = Vector2(46, 764)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(333.5, 0)
+scale = Vector2(4, 4)
+shape = SubResource("WorldBoundaryShape2D_5lcds")
