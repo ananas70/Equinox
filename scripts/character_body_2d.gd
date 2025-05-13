@@ -69,3 +69,6 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.animation = "running"
 	else:
 		sprite_2d.animation = "default"
+		
+func _ready() -> void:
+	add_to_group("player")

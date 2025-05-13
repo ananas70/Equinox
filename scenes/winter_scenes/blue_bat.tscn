@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4q6hmsb28io1"]
+[gd_scene load_steps=8 format=3 uid="uid://c4q6hmsb28io1"]
 
 [ext_resource type="Texture2D" uid="uid://8jy03k7wefbj" path="res://assets/sprites/Actor/Monsters/BlueBat/SpriteSheet.png" id="1_k0x38"]
 [ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="2_g67hh"]
@@ -32,8 +32,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0x38"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
 size = Vector2(14, 12)
 
@@ -44,11 +42,8 @@ texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8ig55")
 autoplay = "default"
-frame_progress = 0.783659
+frame_progress = 0.0406021
 flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_k0x38")
 
 [node name="Killzone" parent="." instance=ExtResource("2_g67hh")]
 
