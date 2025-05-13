@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnciu8613rfy2"]
+
+[ext_resource type="Texture2D" uid="uid://b12oot4nlg48l" path="res://assets/sprites/Actor/Monsters/Grey Trex/SpriteSheet.png" id="1_6udhg"]
+[ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="2_6udhg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5exb"]
+atlas = ExtResource("1_6udhg")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqkq4"]
+atlas = ExtResource("1_6udhg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy8bw"]
+atlas = ExtResource("1_6udhg")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7po2"]
+atlas = ExtResource("1_6udhg")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ig55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5exb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqkq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy8bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7po2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
+size = Vector2(30, 45)
+
+[node name="GreyTrex" type="CharacterBody2D"]
+
+[node name="GreyTrex" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_8ig55")
+autoplay = "default"
+frame_progress = 0.455
+flip_h = true
+
+[node name="Killzone" parent="." instance=ExtResource("2_6udhg")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(2, 3.5)
+shape = SubResource("RectangleShape2D_astmt")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 0)
