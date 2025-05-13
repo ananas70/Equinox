@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dydila04ouiux" path="res://scenes/character_body_2d.tscn" id="3_p8hs8"]
 [ext_resource type="PackedScene" uid="uid://c4q6hmsb28io1" path="res://scenes/winter_scenes/blue_bat.tscn" id="5_77uum"]
 [ext_resource type="Script" uid="uid://b8y30upw8v3gq" path="res://scripts/winter_scripts/blue_bat.gd" id="6_djbep"]
-[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/autumn_scenes/killzone.tscn" id="6_uwipm"]
+[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="6_uwipm"]
 [ext_resource type="PackedScene" uid="uid://d0h51oxxdsc7q" path="res://scenes/winter_scenes/ice_platform.tscn" id="9_sfn76"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_djbep"]

@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bopel53gunxtj" path="res://assets/sprites/Actor/Monsters/AxolotBlue/SpriteSheet.png" id="20_uxycy"]
 [ext_resource type="Script" uid="uid://kn6m8n68slyy" path="res://scenes/spring_scenes/axolot_blue.gd" id="22_uxycy"]
 [ext_resource type="PackedScene" uid="uid://c141t8yo365ph" path="res://scenes/spring_scenes/killzone.tscn" id="23_5lcds"]
-[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/autumn_scenes/killzone.tscn" id="23_ox4nh"]
+[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="23_ox4nh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deqru"]
 texture = ExtResource("2_l7b1u")

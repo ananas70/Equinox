@@ -60,6 +60,7 @@ freeze = true
 script = ExtResource("1_ue6lb")
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 position = Vector2(0, 13)
 tile_set = SubResource("TileSet_cdj0p")
 format = 2
@@ -67,6 +68,7 @@ layer_0/tile_data = PackedInt32Array(-1, 983040, 3)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, 14)
@@ -76,5 +78,6 @@ collision_mask = 2
 position = Vector2(-8, -14.5)
 shape = SubResource("RectangleShape2D_ue6lb")
 
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

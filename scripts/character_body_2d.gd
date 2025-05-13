@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		
 	# Handle wind gliding
 	if in_wind:
-		velocity.y += -300
+		velocity.y += -200
 
 	# Adjust deceleration
 	var direction := Input.get_axis("left", "right")
