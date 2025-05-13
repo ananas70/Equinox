@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcp5b4fgfngy1"]
+
+[ext_resource type="Texture2D" uid="uid://bopel53gunxtj" path="res://assets/sprites/Actor/Monsters/AxolotBlue/SpriteSheet.png" id="1_g5j5n"]
+[ext_resource type="PackedScene" uid="uid://c141t8yo365ph" path="res://scenes/spring_scenes/killzone.tscn" id="2_jx4bt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrirn"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffje0"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubi82"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc4pt"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vmojs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrirn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffje0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubi82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc4pt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22yi7"]
+size = Vector2(64, 52)
+
+[node name="AxolotBlue" type="Node2D"]
+
+[node name="AxolotBlue" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(674, 407)
+scale = Vector2(4.03125, 3.34375)
+sprite_frames = SubResource("SpriteFrames_vmojs")
+autoplay = "default"
+frame_progress = 0.542211
+
+[node name="Killzone" parent="." instance=ExtResource("2_jx4bt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(674, 405)
+shape = SubResource("RectangleShape2D_22yi7")
