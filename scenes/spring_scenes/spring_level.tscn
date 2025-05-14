@@ -1817,13 +1817,12 @@ offset_bottom = 674.0
 texture = ExtResource("1_5k8ae")
 
 [node name="CharacterBody2D" parent="." groups=["player"] instance=ExtResource("9_l7b1u")]
-position = Vector2(242, 350)
+position = Vector2(232, 356)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-23, -180.667)
 scale = Vector2(0.333333, 0.333333)
-anchor_mode = 0
-limit_left = -2048
+limit_left = -40
 limit_top = 0
 limit_right = 10340
 limit_bottom = 0
