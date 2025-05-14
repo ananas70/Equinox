@@ -35,16 +35,23 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
 size = Vector2(14, 12)
 
-[node name="BlueBat" type="Node2D"]
+[node name="BlueBat" type="CharacterBody2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="BlueBat" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8ig55")
 autoplay = "default"
-frame_progress = 0.783659
+frame_progress = 0.793894
+flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("2_g67hh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("RectangleShape2D_astmt")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 0)

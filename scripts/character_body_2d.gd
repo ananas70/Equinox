@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		
 	# Handle wind gliding
 	if in_wind:
-		velocity.y += -300
+		velocity.y += -200
 
 	# Adjust deceleration
 	var direction := Input.get_axis("left", "right")
@@ -69,3 +69,6 @@ func _physics_process(delta: float) -> void:
 		sprite_2d.animation = "running"
 	else:
 		sprite_2d.animation = "default"
+		
+func _ready() -> void:
+	add_to_group("player")
