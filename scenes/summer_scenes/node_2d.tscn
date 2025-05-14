@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://du3u4isyneih6"]
+
+[ext_resource type="Texture2D" uid="uid://b3xtkdw1rh5b4" path="res://assets/sprites/3 - Tropics/Tropics_entities (16 x 16).png" id="1_6e84v"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dvvg"]
+texture = ExtResource("1_6e84v")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+11:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+12:5/0 = 0
+14:5/0 = 0
+12:6/0 = 0
+14:6/0 = 0
+12:7/0 = 0
+14:7/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+11:1/0 = 0
+15:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rnjyy"]
+sources/0 = SubResource("TileSetAtlasSource_4dvvg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vge2"]
+size = Vector2(265.167, 16)
+
+[node name="Node2D" type="AnimatableBody2D"]
+scale = Vector2(3, 3)
+collision_mask = 2
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(174, 111)
+tile_set = SubResource("TileSet_rnjyy")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131074, 720896, 2, -131073, 786432, 2, -196608, 786432, 2, -196607, 786432, 2, -196605, 786432, 2, -196604, 786432, 2, -196603, 786432, 2, -196601, 786432, 2, -196600, 786432, 2, -196599, 786432, 2, -196606, 851968, 2, -196602, 851968, 2, -196598, 851968, 2, -196597, 786432, 2, -196596, 786432, 2, -196595, 786432, 2, -196594, 983040, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(278, 71.3333)
+shape = SubResource("RectangleShape2D_4vge2")
+one_way_collision = true
