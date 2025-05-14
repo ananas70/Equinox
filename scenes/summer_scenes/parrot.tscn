@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwce32m10bgr4"]
+
+[ext_resource type="Script" uid="uid://cwvnkuyonc34m" path="res://scripts/summer_scripts/parrot.gd" id="1_1lflw"]
+[ext_resource type="Texture2D" uid="uid://bydeoak85dhuu" path="res://assets/sprites/Actor/Animals/Parrot/SpriteSheetBlue.png" id="1_shbaa"]
+[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="2_n11au"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n11au"]
+atlas = ExtResource("1_shbaa")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lflw"]
+atlas = ExtResource("1_shbaa")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vd8td"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n11au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lflw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lflw"]
+size = Vector2(15, 15)
+
+[sub_resource type="GDScript" id="GDScript_1lflw"]
+
+[node name="Parrot" type="CharacterBody2D"]
+script = ExtResource("1_1lflw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vd8td")
+autoplay = "default"
+frame = 1
+frame_progress = 0.189759
+
+[node name="Killzone" parent="." instance=ExtResource("2_n11au")]
+position = Vector2(0, 1)
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_1lflw")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 3)
+target_position = Vector2(15, 0)
+script = SubResource("GDScript_1lflw")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 3)
+target_position = Vector2(-15, 0)
