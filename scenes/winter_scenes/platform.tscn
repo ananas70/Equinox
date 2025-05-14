@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b28ugvek5m2ab"]
+[gd_scene load_steps=9 format=3 uid="uid://b28ugvek5m2ab"]
 
 [ext_resource type="Texture2D" uid="uid://bsehvvufxm4j4" path="res://assets/sprites/2 - Autumn Forest/Terrain (16 x 16).png" id="1_qb422"]
 [ext_resource type="Texture2D" uid="uid://b75u4574i2op1" path="res://assets/sprites/4 - Winter World/Terrain (16 x 16).png" id="2_43dt1"]
+[ext_resource type="Texture2D" uid="uid://ceo8awu6m5ht7" path="res://assets/sprites/5 - Misc. universal tiles/Blocks (16 x 16).png" id="3_7cb3p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_un58x"]
 texture = ExtResource("1_qb422")
@@ -83,12 +84,31 @@ texture = ExtResource("2_43dt1")
 5:6/0 = 0
 4:8/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ruh37"]
+texture = ExtResource("3_7cb3p")
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+4:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+9:4/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_b7ghc"]
 sources/0 = SubResource("TileSetAtlasSource_un58x")
 sources/1 = SubResource("TileSetAtlasSource_7cb3p")
+sources/2 = SubResource("TileSetAtlasSource_ruh37")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7ghc"]
-size = Vector2(72.5, 22.5)
+size = Vector2(47, 22.5)
 
 [node name="Platform" type="AnimatableBody2D"]
 
@@ -97,9 +117,9 @@ texture_filter = 1
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_b7ghc")
 format = 2
-layer_0/tile_data = PackedInt32Array(-1, 589825, 3, -65536, 655361, 3, -65535, 851969, 3)
+layer_0/tile_data = PackedInt32Array(-1, 393218, 4, -65536, 458754, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24.5, -21.5)
+position = Vector2(-1, -21.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_b7ghc")
