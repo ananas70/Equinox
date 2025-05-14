@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="Equinox"
+<<<<<<< Updated upstream
 run/main_scene="uid://djcphoe3fyk1x"
+=======
+run/main_scene="uid://b5b1bn1xjad1i"
+>>>>>>> Stashed changes
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
