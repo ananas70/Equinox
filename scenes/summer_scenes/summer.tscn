@@ -362,7 +362,9 @@ position = Vector2(-1698, 437)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1.33334, 0)
+limit_left = -2000
 limit_top = 0
+limit_right = 6000
 limit_bottom = 0
 
 [node name="Background" type="CanvasLayer" parent="."]
@@ -432,10 +434,9 @@ position = Vector2(-1549, 6)
 shape = SubResource("WorldBoundaryShape2D_eh2su")
 
 [node name="Parrot" parent="." instance=ExtResource("13_eh2su")]
-texture_filter = 1
 position = Vector2(-103, 497)
 scale = Vector2(3.69004, 3.81331)
 
-[node name="AnimatedSprite2D" parent="." instance=ExtResource("14_q4kw6")]
+[node name="Slime" parent="." instance=ExtResource("14_q4kw6")]
 position = Vector2(2911, 563)
-scale = Vector2(2.88814, 2.23525)
+scale = Vector2(4.68945, 3.43048)

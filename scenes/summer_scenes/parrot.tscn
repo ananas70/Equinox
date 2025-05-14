@@ -32,6 +32,7 @@ size = Vector2(15, 15)
 [sub_resource type="GDScript" id="GDScript_1lflw"]
 
 [node name="Parrot" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_1lflw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

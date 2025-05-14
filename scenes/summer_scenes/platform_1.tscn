@@ -49,6 +49,7 @@ sources/0 = SubResource("TileSetAtlasSource_vv3yx")
 size = Vector2(187, 39)
 
 [node name="platform1" type="AnimatableBody2D"]
+texture_filter = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(1, -4)
