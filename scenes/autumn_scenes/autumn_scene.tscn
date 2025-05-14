@@ -178,45 +178,6 @@ sources/2 = SubResource("TileSetAtlasSource_cq05p")
 sources/3 = SubResource("TileSetAtlasSource_26lfh")
 sources/4 = SubResource("TileSetAtlasSource_2esdk")
 
-[sub_resource type="Animation" id="Animation_p2gjs"]
-length = 2.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2029, 384), Vector2(2434, 384)]
-}
-
-[sub_resource type="Animation" id="Animation_2esdk"]
-resource_name = "move"
-length = 3.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(2011, 363), Vector2(2416, 363)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2dn8q"]
-_data = {
-&"RESET": SubResource("Animation_p2gjs"),
-&"move": SubResource("Animation_2esdk")
-}
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p2gjs"]
 
 [sub_resource type="Animation" id="Animation_l6ggl"]
@@ -255,6 +216,45 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_l6ggl"),
 &"new_animation": SubResource("Animation_fcu51")
+}
+
+[sub_resource type="Animation" id="Animation_p2gjs"]
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2029, 384), Vector2(2434, 384)]
+}
+
+[sub_resource type="Animation" id="Animation_2esdk"]
+resource_name = "move"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2011, 363), Vector2(2416, 363)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2dn8q"]
+_data = {
+&"RESET": SubResource("Animation_p2gjs"),
+&"move": SubResource("Animation_2esdk")
 }
 
 [node name="AutumnScene" type="Node2D"]
@@ -306,20 +306,6 @@ limit_bottom = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
-[node name="Platform" parent="." instance=ExtResource("8_2esdk")]
-position = Vector2(2029, 384)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform"]
-libraries = {
-&"": SubResource("AnimationLibrary_2dn8q")
-}
-autoplay = "RESET"
-
-[node name="Mushroom" parent="." instance=ExtResource("10_2dn8q")]
-texture_filter = 1
-position = Vector2(1329, 457)
-scale = Vector2(3, 3)
-
 [node name="Killzone" parent="." instance=ExtResource("9_p2gjs")]
 texture_filter = 1
 position = Vector2(46, 764)
@@ -328,26 +314,6 @@ position = Vector2(46, 764)
 position = Vector2(453, -93)
 scale = Vector2(4, 4)
 shape = SubResource("WorldBoundaryShape2D_p2gjs")
-
-[node name="FallingPlatforms" type="Node2D" parent="."]
-
-[node name="FallingPlatform" parent="FallingPlatforms" instance=ExtResource("12_5wi2v")]
-position = Vector2(3117, 249)
-
-[node name="FallingPlatform2" parent="FallingPlatforms" instance=ExtResource("12_5wi2v")]
-position = Vector2(3165, 249)
-
-[node name="FallingPlatform3" parent="FallingPlatforms" instance=ExtResource("12_5wi2v")]
-position = Vector2(3214, 249)
-
-[node name="FallingPlatform4" parent="FallingPlatforms" instance=ExtResource("12_5wi2v")]
-position = Vector2(3263, 249)
-
-[node name="FallingPlatform5" parent="FallingPlatforms" instance=ExtResource("12_5wi2v")]
-position = Vector2(816, 346)
-
-[node name="FallingPlatform6" parent="FallingPlatforms" instance=ExtResource("12_5wi2v")]
-position = Vector2(864, 346)
 
 [node name="Winds" type="Node2D" parent="."]
 
@@ -371,31 +337,69 @@ scale = Vector2(1.84, 1.96)
 position = Vector2(4460, 326)
 scale = Vector2(1.7831, 3)
 
-[node name="Racoon" parent="." instance=ExtResource("8_fcu51")]
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Mole" parent="Enemies" instance=ExtResource("16_bt5vk")]
+position = Vector2(2944, 260)
+
+[node name="Mushroom2" parent="Enemies" instance=ExtResource("10_2dn8q")]
+position = Vector2(5620, 215)
+scale = Vector2(3.5, 3.5)
+
+[node name="Racoon" parent="Enemies" instance=ExtResource("8_fcu51")]
 position = Vector2(3605, 305)
 scale = Vector2(4, 4)
 
-[node name="Platform2" parent="." instance=ExtResource("8_2esdk")]
+[node name="Mushroom" parent="Enemies" instance=ExtResource("10_2dn8q")]
+texture_filter = 1
+position = Vector2(1329, 457)
+scale = Vector2(3, 3)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="SmallPlatform" parent="Platforms" instance=ExtResource("14_l6ggl")]
+position = Vector2(6575, 519)
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("8_2esdk")]
 position = Vector2(4813, 193)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 libraries = {
 &"": SubResource("AnimationLibrary_aquik")
 }
 autoplay = "new_animation"
 
-[node name="SmallPlatform" parent="." instance=ExtResource("14_l6ggl")]
-position = Vector2(6575, 519)
+[node name="FallingPlatforms" type="Node2D" parent="Platforms"]
 
-[node name="Crate" parent="." instance=ExtResource("15_aquik")]
-position = Vector2(7475, 626)
+[node name="FallingPlatform" parent="Platforms/FallingPlatforms" instance=ExtResource("12_5wi2v")]
+position = Vector2(3117, 249)
 
-[node name="Mushroom2" parent="." instance=ExtResource("10_2dn8q")]
-position = Vector2(5620, 215)
-scale = Vector2(3.5, 3.5)
+[node name="FallingPlatform2" parent="Platforms/FallingPlatforms" instance=ExtResource("12_5wi2v")]
+position = Vector2(3165, 249)
 
-[node name="Crate2" parent="." instance=ExtResource("15_aquik")]
+[node name="FallingPlatform3" parent="Platforms/FallingPlatforms" instance=ExtResource("12_5wi2v")]
+position = Vector2(3214, 249)
+
+[node name="FallingPlatform4" parent="Platforms/FallingPlatforms" instance=ExtResource("12_5wi2v")]
+position = Vector2(3263, 249)
+
+[node name="FallingPlatform5" parent="Platforms/FallingPlatforms" instance=ExtResource("12_5wi2v")]
+position = Vector2(816, 346)
+
+[node name="FallingPlatform6" parent="Platforms/FallingPlatforms" instance=ExtResource("12_5wi2v")]
+position = Vector2(864, 346)
+
+[node name="Platform" parent="Platforms" instance=ExtResource("8_2esdk")]
+position = Vector2(2029, 384)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform"]
+libraries = {
+&"": SubResource("AnimationLibrary_2dn8q")
+}
+autoplay = "RESET"
+
+[node name="Crate2" parent="Platforms" instance=ExtResource("15_aquik")]
 position = Vector2(6187, 625)
 
-[node name="Mole" parent="." instance=ExtResource("16_bt5vk")]
-position = Vector2(2944, 260)
+[node name="Crate" parent="Platforms" instance=ExtResource("15_aquik")]
+position = Vector2(7475, 626)
