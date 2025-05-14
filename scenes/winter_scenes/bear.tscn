@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxavadoqvk6ox"]
+
+[ext_resource type="Texture2D" uid="uid://65dsa7hpytbx" path="res://assets/sprites/Actor/Monsters/Beast/Beast.png" id="1_mvbd5"]
+[ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="2_x0nm4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ucgs"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mbvg"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj5rp"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bw1so"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvbd5"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sugo"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45v42"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfnrp"]
+atlas = ExtResource("1_mvbd5")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ig55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ucgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0mbvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj5rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bw1so")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvbd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sugo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45v42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfnrp")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
+size = Vector2(45, 49)
+
+[node name="Bear" type="CharacterBody2D"]
+
+[node name="Bear" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_8ig55")
+animation = &"walking"
+autoplay = "walking"
+frame_progress = 0.0163335
+flip_h = true
+
+[node name="Killzone" parent="." instance=ExtResource("2_x0nm4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0.5, 5.5)
+shape = SubResource("RectangleShape2D_astmt")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 0)
