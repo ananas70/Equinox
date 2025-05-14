@@ -1,0 +1,119 @@
+[gd_scene load_steps=17 format=3 uid="uid://3116is63edx5"]
+
+[ext_resource type="Script" uid="uid://b88ao7q2w35bj" path="res://scripts/winter_scripts/winter_key.gd" id="1_8apoi"]
+[ext_resource type="Texture2D" uid="uid://cy7rg2ih8euhw" path="res://assets/sprites/Collectable/Chests.png" id="2_8apoi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw108"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(0, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87sdc"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(48, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1ujm"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(96, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltkkf"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(144, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plc2m"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(192, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m37xh"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(0, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skwv5"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(48, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8apoi"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(0, 224, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc3mj"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(192, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rir0l"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(144, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5hde"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(96, 192, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a1hc"]
+atlas = ExtResource("2_8apoi")
+region = Rect2(48, 192, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_boa6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sw108")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87sdc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1ujm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltkkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plc2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m37xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skwv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8apoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc3mj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rir0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5hde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a1hc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywd30"]
+size = Vector2(17, 50)
+
+[node name="WinterChest" type="Area2D"]
+light_mask = 2
+script = ExtResource("1_8apoi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3.55271e-15, 0)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_boa6s")
+autoplay = "default"
+frame_progress = 0.311922
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(-21, 23)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_ywd30")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

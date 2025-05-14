@@ -1,13 +1,9 @@
 extends Area2D
 
-@onready var game_manager: Node = %GameManager
-
-
-
-func _on_body_entered(body: Node2D) -> void:
-	if (body.name == "CharacterBody2D"):
-		queue_free()
-		game_manager.collect_point()
-		get_parent().get_node("UI").activate_icon("spring")
-
+signal key_collected  # Semnal pe care îl trimitem la colectare
 	
+func _on_body_entered(body):
+	if body.name == "CharacterBody2D":  # Numele personajului
+		print("Cheie!")
+		emit_signal("key_collected")    # Trimite semnal
+		queue_free()                    # Șterge cheia din scenă

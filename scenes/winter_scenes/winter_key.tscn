@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://dxvudj87gvla7"]
 
-[ext_resource type="Script" uid="uid://bq0loxygly5ax" path="res://scripts/spring_scripts/collectable.gd" id="1_vx253"]
+[ext_resource type="Script" uid="uid://b88ao7q2w35bj" path="res://scripts/winter_scripts/winter_key.gd" id="1_a4py1"]
 [ext_resource type="Texture2D" uid="uid://kbj8qd8igfkm" path="res://assets/sprites/Key Pack - Animated/Key 13/Key 13 - GOLD - Spritesheet.png" id="2_a4py1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p6d1l"]
@@ -187,10 +187,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywd30"]
-size = Vector2(11, 49)
+size = Vector2(17, 50)
 
 [node name="WinterKey" type="Area2D"]
-script = ExtResource("1_vx253")
+light_mask = 2
+script = ExtResource("1_a4py1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -203,7 +204,7 @@ frame_progress = 0.713506
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
-position = Vector2(-0.500001, -1.5)
+position = Vector2(-1.28269e-05, 1.5)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_ywd30")
 
