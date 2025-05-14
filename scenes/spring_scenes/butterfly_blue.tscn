@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://c15sbgm3l3d6s"]
+
+[ext_resource type="Texture2D" uid="uid://duiixjefojv57" path="res://assets/sprites/Actor/Monsters/ButterflyBlue/SpriteSheet.png" id="1_tuq8o"]
+[ext_resource type="PackedScene" uid="uid://c141t8yo365ph" path="res://scenes/spring_scenes/killzone.tscn" id="2_dubc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eoidg"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi87l"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvcwa"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfod4"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7yjgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eoidg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi87l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvcwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfod4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28k16"]
+size = Vector2(15.4074, 15.04)
+
+[node name="ButterflyBlue" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(15.5, 20.5)
+scale = Vector2(3.8125, 3.5625)
+sprite_frames = SubResource("SpriteFrames_7yjgm")
+autoplay = "default"
+frame_progress = 0.193677
+
+[node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_dubc6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
+position = Vector2(0.918032, -0.140352)
+shape = SubResource("RectangleShape2D_28k16")
