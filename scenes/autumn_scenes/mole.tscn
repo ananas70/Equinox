@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsdpoib46434n"]
+
+[ext_resource type="Texture2D" uid="uid://dot488uspv7j3" path="res://assets/sprites/Actor/Monsters/Mole/Mole.png" id="1_tnvaj"]
+[ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="2_aiugl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiugl"]
+atlas = ExtResource("1_tnvaj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4blw"]
+atlas = ExtResource("1_tnvaj")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wivgy"]
+atlas = ExtResource("1_tnvaj")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ku05o"]
+atlas = ExtResource("1_tnvaj")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g70c2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiugl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4blw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wivgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ku05o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td5ls"]
+size = Vector2(14, 16)
+
+[node name="Mole" type="Node2D"]
+scale = Vector2(3.4, 3.4)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g70c2")
+autoplay = "default"
+frame_progress = 0.425814
+
+[node name="Killzone" parent="." instance=ExtResource("2_aiugl")]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("RectangleShape2D_td5ls")
