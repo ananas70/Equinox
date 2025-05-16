@@ -11,91 +11,91 @@ var slides = [
 		"text2": "in a world where nature and joy lived hand in hand",
 		"text_1_duration": 5.0,
 		"zoom": true,
-		"duration": 10.0 
+		"duration": 8.5 
 	},
 	{ 
 		"image": "res://assets/images/glodenor-at-night.png",
 		"text": "But wait, turn on the lights!",
 		"zoom": false,
-		"duration": 3.0
+		"duration": 2.0
 	},
 	{ 
 		"image": "res://assets/images/glodenor-at-day.png",
 		"text": "Ah, much better!",
 		"zoom": false,
-		"duration": 3.0
+		"duration": 2.0
 	},
 	{ 
 		"image": "res://assets/images/glodenor-at-day.png",
-		"text": "In this wonderful kingdom kingdom, there ruled a beautiful and kind-hearted princess.",
+		"text": "In this wonderful kingdom, there ruled a beautiful and kind-hearted princess.",
 		"zoom": true,
-		"duration": 5.0
+		"duration": 4.5
 	},
 	{ 
 		"image": "res://assets/images/princess_diana/princess_in_the_caste.png",
 		"text": "Her name was Princess Diana.",
 		"zoom": false,
-		"duration": 3.0
+		"duration": 2.5
 	},
 	{ 
 		"image": "res://assets/images/princess_diana/princess_in_the_caste.png",
 		"text": "She had taken the throne of Glodenor at just seventeen, and her reign became known as the fairest in memory.",
 		"zoom": true,
-		"duration": 8.0
+		"duration": 6.0
 	},
 	{ 
 		"image": "res://assets/images/princess_diana/princess_and_crowd.png",
 		"text": "People called her “The Lawful Diana”",
 		"zoom": true,
-		"duration": 5.0
+		"duration": 2.7
 	},
 	{ 
 		"image": "res://assets/images/princess_diana/princess_and_animals.png",
 		"text": "...loved by villagers, animals, and nature alike for her pure heart.",
 		"zoom": true,
-		"duration": 6.0
+		"duration": 4.5
 	},
 	{ 
 		"image": "res://assets/images/glodenor_and_seasons.png",
 		"text1": "Yet beyond the borders of Glodenor, in the enchanted lands surrounding the kingdom...",
 		"text2": "...the seasons themselves were in a constant dance, shifting and changing in ways that no one fully understood.",
-		"text_1_duration": 7.0,
+		"text_1_duration": 5.0,
 		"zoom": true,
-		"duration": 14.0
+		"duration": 11.5
 	},
 	{ 
 		"image": "res://assets/images/yryneus_malus/yryneus_outside_cave.png",
 		"text": "But Glodenor’s happiness was about to be disturbed by a solitary, wicked dragon named Yryneus Malus.",
 		"zoom": true,
-		"duration": 7.0
+		"duration": 6.5
 	},
 	{ 
 		"image": "res://assets/images/yryneus_malus/yryneus_cave_gold.png",
 		"text": "Far away in his cavern, he guarded a vast treasure—but no amount of gold could ease the emptiness in his heart.",
 		"zoom": true,
-		"duration": 7.0
+		"duration": 6.5
 	},
 	{ 
 		"image": "res://assets/images/yryneus_malus/yryneus_invitation.png",
 		"text1": "One day, a wandering letter found its way to Yryneus: an invitation to Princess Diana’s 22nd birthday.",
 		"text2": "It included her portrait, and the moment he saw her, something awoke in him - love.",
-		"text_1_duration": 6.0,
+		"text_1_duration": 7.0,
 		"zoom": true,
-		"duration": 12.0
+		"duration": 12.5
 	},
 	{ 
 		"image": "res://assets/images/yryneus_malus/yryneus_flies_away_to_diana.png",
 		"text": "Determined to win her heart, Yryneus left his treasure behind and set off toward Glodenor.",
 		"zoom": true,
-		"duration": 7.0
+		"duration": 5.6
 	},
 	{ 
 		"image": "res://assets/images/diana_and_yryneus/yryneus_proposes.png",
 		"text1": "After a long journey, Yryneus reached the gates during Diana’s grand celebration.",
 		"text2": "He bowed before her, offering riches beyond imagination and asking for her hand.",
-		"text_1_duration": 6.0,
+		"text_1_duration": 5.0,
 		"zoom": true,
-		"duration": 12.0
+		"duration": 10.6
 	},
 	{ 
 		"image": "res://assets/images/diana_and_yryneus/diana_refuses_yryneus.png",
@@ -103,7 +103,7 @@ var slides = [
 		"text2": "“Forgive me, but I cannot be yours.”",
 		"text_1_duration": 6.0,
 		"zoom": true,
-		"duration": 12.0
+		"duration": 8.6
 	},
 	{ 
 		"image": "res://assets/images/diana_and_yryneus/yryneus_kidnaps_diana.png",
@@ -111,19 +111,19 @@ var slides = [
 		"text2": "He flew her back to his cavern and declared:",
 		"text_1_duration": 6.0,
 		"zoom": true,
-		"duration": 12.0
+		"duration": 8.7
 	},
 	{ 
 		"image": "res://assets/images/diana_and_yryneus/yryneus_threatens_diana.png",
 		"text": "“If you won’t be mine, then here you’ll stay—forever a prisoner of your own choice.”",
 		"zoom": true,
-		"duration": 6.0
+		"duration": 5.0
 	},
 	{ 
 		"image": "res://assets/images/the_frog_man/frog_baby_saves_bat.png",
 		"text": "Long before Diana’s capture, there lived a man who once saved a bat from a wicked witch.",
 		"zoom": true,
-		"duration": 7.0
+		"duration": 5.0
 	},
 	{ 
 		"image": "res://assets/images/the_frog_man/the_frog_sad_home.png",
@@ -137,9 +137,9 @@ var slides = [
 		"image": "res://assets/images/the_frog_man/the_frog_leaves_glodenor.png",
 		"text1": "Upon hearing of the princess’s abduction, something stirred within the Frog.",
 		"text2": "He sold everything he had and set out, armed and determined to rescue her from the dragon’s grasp.",
-		"text_1_duration": 6.0,
+		"text_1_duration": 4.6,
 		"zoom": true,
-		"duration": 12.0
+		"duration": 11.0
 	},
 	{ 
 		"image": "res://assets/images/the_frog_man/the_frog_leaves_landscape.png",

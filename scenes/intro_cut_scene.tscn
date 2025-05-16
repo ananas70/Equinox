@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqpyqb6bbnj6a"]
+[gd_scene load_steps=4 format=3 uid="uid://cqpyqb6bbnj6a"]
 
 [ext_resource type="Script" uid="uid://cgnce1innylr8" path="res://scripts/intro_cut_scene.gd" id="1_xi6w6"]
+[ext_resource type="AudioStream" uid="uid://l3u40cpojmtc" path="res://assets/sounds/intro_cutscene_background_music.mp3" id="2_tafbk"]
+[ext_resource type="AudioStream" uid="uid://dt100qr6vr4r0" path="res://assets/sounds/intro-voice_good.mp3" id="3_kehqt"]
 
 [node name="IntroCutScene" type="CanvasLayer"]
 script = ExtResource("1_xi6w6")
@@ -35,6 +37,15 @@ offset_top = 18.0
 offset_right = 104.0
 offset_bottom = 68.0
 text = "Skip"
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tafbk")
+volume_db = -15.758
+autoplay = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kehqt")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="TextSwitchTimer" to="." method="_on_text_switch_timer_timeout"]

@@ -12,4 +12,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+	var game = get_tree().root.get_node("Game")
+	game.load_level(game.anotimpuri[game.current_season_index])

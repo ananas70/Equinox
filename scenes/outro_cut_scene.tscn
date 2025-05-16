@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cul4a84g8m2vy"]
+
+[ext_resource type="Script" uid="uid://djiqo01l1llly" path="res://scripts/outro_cut_scene.gd" id="1_mpsjp"]
+[ext_resource type="AudioStream" uid="uid://l3u40cpojmtc" path="res://assets/sounds/intro_cutscene_background_music.mp3" id="2_vcncb"]
+[ext_resource type="AudioStream" uid="uid://b0sq6mi3eyooc" path="res://assets/sounds/outro-voice.mp3" id="3_mpsjp"]
+
+[node name="OutroCutScene" type="CanvasLayer"]
+script = ExtResource("1_mpsjp")
+
+[node name="Image" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -64.0
+offset_right = 0.5
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="TextSwitchTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SkipButton" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 18.0
+offset_right = 104.0
+offset_bottom = 68.0
+text = "Skip"
+
+[node name="Background_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vcncb")
+volume_db = -15.758
+autoplay = true
+
+[node name="Voice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mpsjp")
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="TextSwitchTimer" to="." method="_on_text_switch_timer_timeout"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]
