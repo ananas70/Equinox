@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdn1s0d7160tb"]
+[gd_scene load_steps=7 format=3 uid="uid://cdn1s0d7160tb"]
 
 [ext_resource type="Script" uid="uid://dpkxqjx320x28" path="res://scripts/menus_scripts/main_menu.gd" id="1_2o76q"]
 [ext_resource type="Texture2D" uid="uid://cgj4t5g6bkios" path="res://assets/images/for_menus/main_menu_image_clean.png" id="2_6bivr"]
 [ext_resource type="FontFile" uid="uid://dritpapbkxc" path="res://assets/fonts/Chewy/Chewy-Regular.ttf" id="3_imvie"]
+[ext_resource type="AudioStream" uid="uid://dowb4pgjrgej1" path="res://assets/sounds/main_menu_sound.mp3" id="4_6bivr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ekxnf"]
 texture = ExtResource("2_6bivr")
@@ -81,6 +82,10 @@ theme_override_fonts/font = ExtResource("3_imvie")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_vue75")
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6bivr")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
