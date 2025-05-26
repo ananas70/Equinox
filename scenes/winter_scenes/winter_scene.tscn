@@ -174,7 +174,7 @@ position = Vector2(826, 549)
 
 [node name="BlueSlime" parent="." instance=ExtResource("9_vp2ve")]
 z_index = 1
-position = Vector2(2452, 367)
+position = Vector2(2452, 369)
 
 [node name="BlueSlime2" parent="." instance=ExtResource("9_vp2ve")]
 z_index = 1
