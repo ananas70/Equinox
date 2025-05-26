@@ -1,0 +1,120 @@
+[gd_scene load_steps=18 format=3 uid="uid://dgpdlcvg6ey37"]
+
+[ext_resource type="Script" uid="uid://4myfhgk1763f" path="res://scripts/shuriken.gd" id="1_k18gy"]
+[ext_resource type="Texture2D" uid="uid://bmau77sqei0pi" path="res://assets/sprites/FX/Projectile/Shuriken/SpriteSheet.png" id="2_0rvwh"]
+[ext_resource type="Texture2D" uid="uid://cxtbdx83wiys6" path="res://assets/sprites/FX/Projectile/Shuriken.png" id="2_k18gy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jr3c8"]
+radius = 6.08276
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvn8i"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(0, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tacqd"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(69, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2qga"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(138, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3mqu"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(207, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgiul"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(276, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjwna"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(345, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ock3c"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(414, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cap73"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(483, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot8dm"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(552, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5wlc"]
+atlas = ExtResource("2_0rvwh")
+region = Rect2(621, 0, 69, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rvwh"]
+atlas = ExtResource("2_k18gy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jr3c8"]
+atlas = ExtResource("2_k18gy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvn8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvn8i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tacqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2qga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3mqu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgiul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjwna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ock3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cap73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot8dm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5wlc")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rvwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jr3c8")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 6.0
+}]
+
+[node name="Shuriken" type="Area2D"]
+scale = Vector2(1.6, 1.6)
+script = ExtResource("1_k18gy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jr3c8")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_yvn8i")
+animation = &"damage"

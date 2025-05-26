@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://dydila04ouiux"]
+[gd_scene load_steps=16 format=3 uid="uid://dydila04ouiux"]
 
 [ext_resource type="Script" uid="uid://duspq8y8ug708" path="res://scripts/character_body_2d.gd" id="1_gbxxo"]
+[ext_resource type="PackedScene" uid="uid://dgpdlcvg6ey37" path="res://scenes/shuriken.tscn" id="2_dn4c7"]
 [ext_resource type="Texture2D" uid="uid://djo15cox0hh2f" path="res://assets/MaskFrog/SpriteSheet.png" id="2_gbxxo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jy4ch"]
@@ -103,6 +104,7 @@ size = Vector2(14.3333, 14.3333)
 scale = Vector2(3, 3)
 collision_layer = 2
 script = ExtResource("1_gbxxo")
+shuriken_scene = ExtResource("2_dn4c7")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

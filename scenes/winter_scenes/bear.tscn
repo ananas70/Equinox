@@ -1,22 +1,26 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxavadoqvk6ox"]
+[gd_scene load_steps=18 format=3 uid="uid://bxavadoqvk6ox"]
 
+[ext_resource type="Script" uid="uid://cavq2ch0dqcv6" path="res://scripts/winter_scripts/bear.gd" id="1_mj5rp"]
 [ext_resource type="Texture2D" uid="uid://65dsa7hpytbx" path="res://assets/sprites/Actor/Monsters/Beast/Beast.png" id="1_mvbd5"]
+[ext_resource type="Texture2D" uid="uid://cd6recsh2k0i4" path="res://assets/sprites/Actor/Monsters/Beast/Beast_Damage.png" id="2_bw1so"]
 [ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="2_x0nm4"]
+[ext_resource type="Texture2D" uid="uid://cu5qp0k1sarmw" path="res://assets/sprites/Items/Weapons/healthbar_faded.png" id="4_bw1so"]
+[ext_resource type="Texture2D" uid="uid://mr3bivhf6o4p" path="res://assets/sprites/Items/Weapons/healthbar.png" id="5_0sugo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4ucgs"]
-atlas = ExtResource("1_mvbd5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6is7"]
+atlas = ExtResource("2_bw1so")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0mbvg"]
-atlas = ExtResource("1_mvbd5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fv4t"]
+atlas = ExtResource("2_bw1so")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mj5rp"]
-atlas = ExtResource("1_mvbd5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws4bn"]
+atlas = ExtResource("2_bw1so")
 region = Rect2(0, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bw1so"]
-atlas = ExtResource("1_mvbd5")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxsu5"]
+atlas = ExtResource("2_bw1so")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvbd5"]
@@ -39,20 +43,20 @@ region = Rect2(32, 48, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4ucgs")
+"texture": SubResource("AtlasTexture_n6is7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0mbvg")
+"texture": SubResource("AtlasTexture_8fv4t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mj5rp")
+"texture": SubResource("AtlasTexture_ws4bn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bw1so")
+"texture": SubResource("AtlasTexture_kxsu5")
 }],
-"loop": true,
-"name": &"default",
-"speed": 4.0
+"loop": false,
+"name": &"damage",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -68,28 +72,31 @@ animations = [{
 "texture": SubResource("AtlasTexture_sfnrp")
 }],
 "loop": true,
-"name": &"walking",
+"name": &"default",
 "speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
-size = Vector2(45, 49)
+size = Vector2(58, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45v42"]
+size = Vector2(423.571, 762.143)
 
 [node name="Bear" type="CharacterBody2D"]
+script = ExtResource("1_mj5rp")
 
 [node name="Bear" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8ig55")
-animation = &"walking"
-autoplay = "walking"
-frame_progress = 0.0163335
+animation = &"damage"
+autoplay = "default"
 flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("2_x0nm4")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0.5, 5.5)
+position = Vector2(-2, -0.5)
 shape = SubResource("RectangleShape2D_astmt")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
@@ -97,3 +104,21 @@ target_position = Vector2(30, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-30, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.825001, 4.325)
+scale = Vector2(0.07, 0.07)
+shape = SubResource("RectangleShape2D_45v42")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 1160.0
+offset_bottom = 820.0
+scale = Vector2(0.07, 0.07)
+max_value = 6.0
+value = 6.0
+texture_under = ExtResource("4_bw1so")
+texture_progress = ExtResource("5_0sugo")

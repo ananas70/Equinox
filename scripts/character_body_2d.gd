@@ -8,6 +8,8 @@ const NORMAL_DECELERATION = 40
 const SLIDE_GRACE_TIME = 0.00035 * ICE_SPEED  # Half a second of sliding after ice
 
 @onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@export var shuriken_scene: PackedScene
+var last_direction := Vector2.RIGHT  # ultima directie in care a mers
 
 var slide_timer = 0.0
 
@@ -46,6 +48,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * speed
+		last_direction = Vector2.RIGHT if direction > 0 else Vector2.LEFT  # actualizam directia
 	else:
 		var deceleration 
 		if slide_timer > 0:
@@ -72,3 +75,13 @@ func _physics_process(delta: float) -> void:
 		
 func _ready() -> void:
 	add_to_group("player")
+
+func _process(delta):
+	if Input.is_action_just_pressed("attack"):
+		shoot_shuriken()
+
+func shoot_shuriken():
+	var s = shuriken_scene.instantiate()
+	s.position = global_position
+	s.direction = last_direction  # folosim directia memorata
+	get_parent().add_child(s)

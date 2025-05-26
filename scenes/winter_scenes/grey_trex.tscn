@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnciu8613rfy2"]
+[gd_scene load_steps=10 format=3 uid="uid://cnciu8613rfy2"]
 
 [ext_resource type="Texture2D" uid="uid://b12oot4nlg48l" path="res://assets/sprites/Actor/Monsters/Grey Trex/SpriteSheet.png" id="1_6udhg"]
 [ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="2_6udhg"]
@@ -42,6 +42,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
 size = Vector2(30, 45)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ntd0"]
+size = Vector2(36, 58)
+
 [node name="GreyTrex" type="CharacterBody2D"]
 
 [node name="GreyTrex" type="AnimatedSprite2D" parent="."]
@@ -63,3 +66,7 @@ target_position = Vector2(30, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-30, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_6ntd0")

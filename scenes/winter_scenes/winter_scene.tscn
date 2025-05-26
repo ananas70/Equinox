@@ -1,17 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://ja8ctvd3ho2q"]
+[gd_scene load_steps=21 format=3 uid="uid://ja8ctvd3ho2q"]
 
 [ext_resource type="Script" uid="uid://cuer02pggrr4m" path="res://scripts/winter_scripts/winter_game_manager.gd" id="1_1a0hg"]
 [ext_resource type="Texture2D" uid="uid://cq15h25v0qtyg" path="res://assets/sprites/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208)2.png" id="1_7w5uu"]
 [ext_resource type="TileSet" uid="uid://omgxvilrecpr" path="res://scenes/winter_scenes/winter_scene_tileset.tres" id="2_brgci"]
 [ext_resource type="PackedScene" uid="uid://dydila04ouiux" path="res://scenes/character_body_2d.tscn" id="3_p8hs8"]
 [ext_resource type="PackedScene" uid="uid://c4q6hmsb28io1" path="res://scenes/winter_scenes/blue_bat.tscn" id="5_77uum"]
-[ext_resource type="Script" uid="uid://b8y30upw8v3gq" path="res://scripts/winter_scripts/blue_bat.gd" id="6_djbep"]
 [ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="6_uwipm"]
 [ext_resource type="Script" uid="uid://bajegkjnuxv5j" path="res://scripts/winter_scripts/grey_trex.gd" id="8_7w5uu"]
 [ext_resource type="PackedScene" uid="uid://cnciu8613rfy2" path="res://scenes/winter_scenes/grey_trex.tscn" id="8_ledq8"]
 [ext_resource type="PackedScene" uid="uid://d0h51oxxdsc7q" path="res://scenes/winter_scenes/ice_platform.tscn" id="9_sfn76"]
 [ext_resource type="PackedScene" uid="uid://cly35tu31orat" path="res://scenes/winter_scenes/blue_slime.tscn" id="9_vp2ve"]
-[ext_resource type="Script" uid="uid://cavq2ch0dqcv6" path="res://scripts/winter_scripts/bear.gd" id="11_37soi"]
 [ext_resource type="PackedScene" uid="uid://b28ugvek5m2ab" path="res://scenes/winter_scenes/platform.tscn" id="11_vp2ve"]
 [ext_resource type="PackedScene" uid="uid://dxvudj87gvla7" path="res://scenes/winter_scenes/winter_key.tscn" id="12_dtn3l"]
 [ext_resource type="PackedScene" uid="uid://bxavadoqvk6ox" path="res://scenes/winter_scenes/bear.tscn" id="13_8v22a"]
@@ -117,7 +115,7 @@ layer_0/z_index = -1
 layer_0/tile_data = PackedInt32Array(786416, 1703942, 1, 851952, 1703942, 2, 786417, 1769478, 1, 851953, 1769478, 2, 786425, 1703942, 1, 851961, 1703942, 2, 786426, 1769478, 1, 851962, 1769478, 2, 655336, 196608, 2, 720872, 196608, 2, 786408, 196608, 2, 786423, 1703942, 268435457, 786422, 1769478, 268435457, 851959, 1703942, 268435458, 851958, 1769478, 268435458, 851992, 327680, 2, 851966, 196608, 2, 917502, 196608, 3, 851946, 327680, 2, 524306, 262144, 6, 852016, 196608, 5, 524337, 262144, 1, 524338, 262144, 1, 524339, 262144, 1, 524340, 262144, 1, 589873, 262144, 4, 589874, 262144, 4, 589875, 262144, 4, 589876, 262144, 4, 786481, 262144, 4, 655409, 262144, 4, 655410, 262144, 4, 655411, 262144, 4, 655412, 262144, 4, 786456, 458752, 3, 786480, 196608, 5, 720938, 1703942, 1, 786474, 1703942, 2, 720939, 1769478, 1, 786475, 1769478, 2, 720930, 1703942, 1, 786466, 1703942, 2, 720931, 1769478, 1, 786467, 1769478, 2, 720941, 1703942, 268435457, 720940, 1769478, 268435457, 786477, 1703942, 268435458, 786476, 1769478, 268435458, 720935, 1703942, 268435457, 720934, 1769478, 268435457, 786471, 1703942, 268435458, 786470, 1769478, 268435458, 589854, 196608, 6, 589886, 196608, 6, 524346, 196608, 6, 458809, 196608, 6, 393272, 262144, 6, 524347, 262144, 6, 524348, 262144, 6, 524349, 262144, 6, 852026, 262145, 1, 852027, 262145, 1, 786489, 196609, 1, 720952, 196609, 1, 655416, 196609, 1, 589879, 196609, 1, 589878, 196609, 1, 524342, 196609, 1, 852030, 262145, 1, 852031, 196609, 1, 852032, 262145, 1, 852029, 196609, 1, 852025, 262144, 4, 720953, 262145, 1, 655415, 262145, 1, 524341, 262145, 1, 393270, 196608, 6, 393271, 262144, 6, 852028, 196609, 1, 589885, 851974, 536870917, 589884, 851974, 536870925, 589883, 851974, 536870917, 655422, 720902, 536870925, 589887, 262144, 6, 589888, 262144, 6, 655425, 262145, 1, 655424, 851974, 536870917, 655423, 851974, 536870925, 458806, 1769478, 14, 524350, 196608, 4, 917494, 786438, 5, 917495, 720902, 5, 917496, 786438, 5, 917497, 851974, 5, 917498, 786438, 5, 917499, 786438, 5, 917500, 851974, 5, 917501, 786438, 5, 917487, 851974, 5, 917486, 851974, 5, 917485, 786438, 5, 917484, 786438, 5, 917483, 786438, 5, 917488, 786438, 5, 917489, 786438, 5, 917490, 786438, 5, 917491, 851974, 5, 917492, 720902, 5, 917493, 851974, 5, 786413, 1703942, 268435457, 786412, 1769478, 268435457, 851949, 1703942, 268435458, 851948, 1769478, 268435458, 851994, 851974, 5, 851998, 851974, 5, 852003, 851974, 5, 852014, 851974, 5, 852015, 851974, 5, 852004, 720902, 5, 852005, 720902, 5, 851996, 720902, 5, 852010, 851974, 5, 852012, 720902, 5, 852001, 720902, 5, 851999, 786438, 5, 852000, 786438, 5, 851997, 786438, 5, 851993, 786438, 5, 851995, 786438, 5, 852008, 786438, 5, 852007, 786438, 5, 852002, 720902, 5, 852013, 720902, 5, 852011, 720902, 5, 852009, 720902, 5, 852006, 851974, 5, 852033, 196609, 1, 589889, 262144, 4, 786499, 196609, 1, 786500, 262144, 4, 786501, 262144, 4, 786502, 327680, 3, 589893, 393216, 3, 589894, 458752, 3, 589891, 393216, 3, 589892, 393216, 3, 852034, 196609, 1, 655426, 196609, 1, 655427, 262145, 1, 720963, 262145, 1, 852035, 262145, 1, 524345, 720902, 536870925, 589882, 851974, 536870925, 458808, 851974, 536870925, 458807, 851974, 536870925, 262204, 196610, 5, 262205, 262146, 5, 524358, 196610, 268435461, 524357, 262146, 268435461, 393233, 196610, 268435461, 393232, 262146, 268435461)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_p8hs8")]
-position = Vector2(3013, 575)
+position = Vector2(2544, 343)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(1.66667, 2.33333)
@@ -173,7 +171,6 @@ script = ExtResource("8_7w5uu")
 
 [node name="BlueBat" parent="." instance=ExtResource("5_77uum")]
 position = Vector2(826, 549)
-script = ExtResource("6_djbep")
 
 [node name="BlueSlime" parent="." instance=ExtResource("9_vp2ve")]
 z_index = 1
@@ -184,9 +181,7 @@ z_index = 1
 position = Vector2(2872, 223)
 
 [node name="Bear" parent="." instance=ExtResource("13_8v22a")]
-visible = false
-position = Vector2(2960, 104)
-script = ExtResource("11_37soi")
+position = Vector2(2893, 595)
 
 [node name="Killzone" parent="." instance=ExtResource("6_uwipm")]
 texture_filter = 1

@@ -1,7 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4q6hmsb28io1"]
+[gd_scene load_steps=17 format=3 uid="uid://c4q6hmsb28io1"]
 
+[ext_resource type="Script" uid="uid://b8y30upw8v3gq" path="res://scripts/winter_scripts/blue_bat.gd" id="1_8bhc0"]
 [ext_resource type="Texture2D" uid="uid://8jy03k7wefbj" path="res://assets/sprites/Actor/Monsters/BlueBat/SpriteSheet.png" id="1_k0x38"]
+[ext_resource type="Texture2D" uid="uid://dptmx3a3w88nf" path="res://assets/sprites/Actor/Monsters/BlueBat/SpriteSheet_Die.png" id="2_55evy"]
 [ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="2_g67hh"]
+[ext_resource type="Texture2D" uid="uid://mr3bivhf6o4p" path="res://assets/sprites/Items/Weapons/healthbar.png" id="3_g67hh"]
+[ext_resource type="Texture2D" uid="uid://cu5qp0k1sarmw" path="res://assets/sprites/Items/Weapons/healthbar_faded.png" id="3_qawt8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ig55"]
+atlas = ExtResource("2_55evy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_astmt"]
+atlas = ExtResource("2_55evy")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru6yt"]
+atlas = ExtResource("2_55evy")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t84rp"]
+atlas = ExtResource("2_55evy")
+region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qawt8"]
 atlas = ExtResource("1_k0x38")
@@ -19,6 +39,23 @@ region = Rect2(0, 32, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_8ig55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_astmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru6yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t84rp")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qawt8")
 }, {
 "duration": 1.0,
@@ -33,21 +70,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
-size = Vector2(14, 12)
+size = Vector2(49, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0x38"]
+size = Vector2(23, 47)
 
 [node name="BlueBat" type="CharacterBody2D"]
+script = ExtResource("1_8bhc0")
 
 [node name="BlueBat" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8ig55")
+animation = &"damage"
 autoplay = "default"
-frame_progress = 0.793894
+frame = 3
+frame_progress = 1.0
 flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("2_g67hh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_astmt")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
@@ -55,3 +99,20 @@ target_position = Vector2(30, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-30, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_k0x38")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 1160.0
+offset_bottom = 820.0
+scale = Vector2(0.07, 0.07)
+max_value = 3.0
+value = 3.0
+texture_under = ExtResource("3_qawt8")
+texture_progress = ExtResource("3_g67hh")
