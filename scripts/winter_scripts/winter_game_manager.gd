@@ -1,5 +1,7 @@
 extends Node
 
+var chest_opened := false
+
 func _on_key_collected():
 	print("Afiseaza!!")
 	# Afisam iconita -> cheia a fost preluata
