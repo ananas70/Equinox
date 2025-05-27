@@ -266,9 +266,10 @@ rotation = 1.5708
 scale = Vector2(2.5, 1.923)
 sprite_frames = SubResource("SpriteFrames_boa6s")
 autoplay = "default"
-frame_progress = 0.120085
+frame_progress = 0.504229
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
 texture_filter = 1
 position = Vector2(-1.28269e-05, 1.5)
 rotation = 1.5708

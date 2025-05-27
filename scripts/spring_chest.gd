@@ -33,6 +33,7 @@ func open_chest():
 	animated_sprite_2d.play("open")
 	await animated_sprite_2d.animation_finished
 	$AnimationPlayer.play("pop_apple")
+	get_parent().get_node("UI").activate_icon("spring") 
 
 func start_shaking():
 	if shaking:
