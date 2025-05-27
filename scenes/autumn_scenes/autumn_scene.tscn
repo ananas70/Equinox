@@ -446,3 +446,5 @@ region_rect = Rect2(20, 20, 0, 0)
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("21_ow07x")
+
+[connection signal="key_collected" from="AutumnKey" to="GameManager" method="_on_key_collected"]
