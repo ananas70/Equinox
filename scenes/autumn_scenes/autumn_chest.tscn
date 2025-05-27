@@ -337,7 +337,7 @@ shape = SubResource("RectangleShape2D_ywd30")
 visible = false
 z_index = 1
 texture_filter = 1
-position = Vector2(-20, -60)
+position = Vector2(27, -60)
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_8j5j6")
 

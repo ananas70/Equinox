@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdj8sqi3euwn8"]
+
+[ext_resource type="Script" uid="uid://5rujf6bslei4" path="res://scenes/spring_scenes/portal.gd" id="1_f4wti"]
+[ext_resource type="Texture2D" uid="uid://c0i82q564ovel" path="res://assets/sprites/1 - Grassland/portal_48x48_bottom_aligned.png" id="2_j3qmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cjwk"]
+size = Vector2(121, 109.75)
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_f4wti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.70833, 2.61979)
+texture = ExtResource("2_j3qmp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6cjwk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

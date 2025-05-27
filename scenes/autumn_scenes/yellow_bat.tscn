@@ -1,0 +1,121 @@
+[gd_scene load_steps=17 format=3 uid="uid://l0n3trvhh4rw"]
+
+[ext_resource type="Script" uid="uid://cgxefxobahqol" path="res://scripts/autumn_scripts/yellow_bat.gd" id="1_vcitk"]
+[ext_resource type="Texture2D" uid="uid://7rg03ge7yqn3" path="res://assets/sprites/Actor/Monsters/YellowsBat/SpriteSheet.png" id="2_irndr"]
+[ext_resource type="PackedScene" uid="uid://bwouh3ghoex1h" path="res://scenes/winter_scenes/killzone.tscn" id="4_wc1if"]
+[ext_resource type="Texture2D" uid="uid://cu5qp0k1sarmw" path="res://assets/sprites/Items/Weapons/healthbar_faded.png" id="5_cty87"]
+[ext_resource type="Texture2D" uid="uid://mr3bivhf6o4p" path="res://assets/sprites/Items/Weapons/healthbar.png" id="6_dkcsd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrkoq"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n3id"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g72ie"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkpbr"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhkpb"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcitk"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irndr"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3exi"]
+atlas = ExtResource("2_irndr")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ig55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrkoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7n3id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g72ie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkpbr")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhkpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcitk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irndr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3exi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_astmt"]
+size = Vector2(49, 47)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0x38"]
+size = Vector2(23, 47)
+
+[node name="YellowBat" type="CharacterBody2D"]
+script = ExtResource("1_vcitk")
+
+[node name="YellowBat" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_8ig55")
+autoplay = "default"
+flip_h = true
+
+[node name="Killzone" parent="." instance=ExtResource("4_wc1if")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_astmt")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(30, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_k0x38")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 1160.0
+offset_bottom = 820.0
+scale = Vector2(0.07, 0.07)
+max_value = 3.0
+value = 3.0
+texture_under = ExtResource("5_cty87")
+texture_progress = ExtResource("6_dkcsd")
