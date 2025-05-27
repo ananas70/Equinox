@@ -4,9 +4,9 @@ extends Node2D
 
 var anotimpuri = [
 	"res://scenes/autumn_scenes/autumn_scene.tscn",
+	"res://scenes/winter_scenes/winter_scene.tscn",
 	"res://scenes/spring_scenes/spring_level.tscn",
-	"res://scenes/summer_scenes/summer.tscn",
-	"res://scenes/winter_scenes/winter_scene.tscn"
+	"res://scenes/summer_scenes/summer.tscn"
 ]
 var current_season_index = 0
 
@@ -16,7 +16,6 @@ func goto_next_season():
 		current_season_index = 0  # sau încheie jocul
 
 	load_screen_to_scene(anotimpuri[current_season_index])
-
 
 
 # Încarcă o scenă de joc / intro / nivel
@@ -34,6 +33,10 @@ func show_menu(path: String):
 
 # Încarcă un ecran de loading care apoi trece la target
 func load_screen_to_scene(target: String):
+	# Ascunde toate CanvasLayer-urile din scena curentă de nivel (Level)
+	for child in level.get_children():
+		child.queue_free()
+		
 	var loading_screen = preload("res://scenes/menus/loading_screen.tscn").instantiate()
 	loading_screen.next_scene_path = target
 	get_tree().current_scene.add_child(loading_screen)
