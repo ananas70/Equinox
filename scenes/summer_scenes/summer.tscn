@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b5b1bn1xjad1i"]
+[gd_scene load_steps=37 format=3 uid="uid://b5b1bn1xjad1i"]
 
 [ext_resource type="Texture2D" uid="uid://cd4hh4wv51ax8" path="res://assets/sprites/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="1_iujmj"]
 [ext_resource type="Texture2D" uid="uid://c68ftuatoiex6" path="res://assets/sprites/3 - Tropics/Terrain (16 x 16).png" id="2_3v0kh"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="12_sc5fc"]
 [ext_resource type="PackedScene" uid="uid://cwce32m10bgr4" path="res://scenes/summer_scenes/parrot.tscn" id="13_eh2su"]
 [ext_resource type="PackedScene" uid="uid://bygv6y0udnx5r" path="res://scenes/summer_scenes/slime.tscn" id="14_q4kw6"]
+[ext_resource type="PackedScene" uid="uid://dxvudj87gvla7" path="res://scenes/summer_scenes/summer_key.tscn" id="15_4o2gs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67jw8"]
 texture = ExtResource("2_3v0kh")
@@ -435,8 +436,21 @@ shape = SubResource("WorldBoundaryShape2D_eh2su")
 
 [node name="Parrot" parent="." instance=ExtResource("13_eh2su")]
 position = Vector2(-103, 497)
-scale = Vector2(3.69004, 3.81331)
+scale = Vector2(1, 1.033)
 
 [node name="Slime" parent="." instance=ExtResource("14_q4kw6")]
 position = Vector2(2911, 563)
-scale = Vector2(4.68945, 3.43048)
+scale = Vector2(1, 0.731)
+
+[node name="Parrot2" parent="." instance=ExtResource("13_eh2su")]
+position = Vector2(4537, 541)
+scale = Vector2(1, 1)
+
+[node name="slime" parent="." instance=ExtResource("14_q4kw6")]
+position = Vector2(-1192, 253)
+
+[node name="summerKey" parent="." instance=ExtResource("15_4o2gs")]
+texture_filter = 1
+position = Vector2(373, 585)
+collision_layer = 3
+collision_mask = 3
