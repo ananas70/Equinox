@@ -88,6 +88,7 @@ script = ExtResource("1_vcitk")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_8ig55")
+animation = &"damage"
 autoplay = "default"
 flip_h = true
 
@@ -98,10 +99,10 @@ position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_astmt")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
-target_position = Vector2(30, 0)
+target_position = Vector2(90, 0)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-30, 0)
+target_position = Vector2(-90, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 1.5)

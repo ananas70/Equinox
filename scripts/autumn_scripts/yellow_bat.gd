@@ -8,7 +8,7 @@ var stunned := false  # blocăm mișcarea în timpul damage
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var yellow_bat: AnimatedSprite2D = $YellowBat
 
-@export var max_health := 3
+@export var max_health := 5
 var current_health := max_health
 
 func _ready():
