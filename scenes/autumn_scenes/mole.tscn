@@ -1,7 +1,27 @@
-[gd_scene load_steps=9 format=3 uid="uid://dsdpoib46434n"]
+[gd_scene load_steps=18 format=3 uid="uid://dsdpoib46434n"]
 
+[ext_resource type="Script" uid="uid://d4g7f1wkdf6rw" path="res://scripts/autumn_scripts/mole.gd" id="1_3rnsl"]
 [ext_resource type="Texture2D" uid="uid://dot488uspv7j3" path="res://assets/sprites/Actor/Monsters/Mole/Mole.png" id="1_tnvaj"]
 [ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="2_aiugl"]
+[ext_resource type="Texture2D" uid="uid://b4b1g5c8qio54" path="res://assets/sprites/Actor/Monsters/Mole2/Mole2.png" id="2_bjvtl"]
+[ext_resource type="Texture2D" uid="uid://cu5qp0k1sarmw" path="res://assets/sprites/Items/Weapons/healthbar_faded.png" id="3_drvju"]
+[ext_resource type="Texture2D" uid="uid://mr3bivhf6o4p" path="res://assets/sprites/Items/Weapons/healthbar.png" id="4_3rnsl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0oal8"]
+atlas = ExtResource("2_bjvtl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7f8ov"]
+atlas = ExtResource("2_bjvtl")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2myc"]
+atlas = ExtResource("2_bjvtl")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew3oq"]
+atlas = ExtResource("2_bjvtl")
+region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aiugl"]
 atlas = ExtResource("1_tnvaj")
@@ -23,6 +43,23 @@ region = Rect2(0, 48, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_0oal8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7f8ov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2myc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew3oq")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_aiugl")
 }, {
 "duration": 1.0,
@@ -42,17 +79,49 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_td5ls"]
 size = Vector2(14, 16)
 
-[node name="Mole" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bjvtl"]
+size = Vector2(8.52941, 15.2941)
+
+[node name="Mole" type="CharacterBody2D"]
 scale = Vector2(3.4, 3.4)
+script = ExtResource("1_3rnsl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(3.4, 3.4)
 sprite_frames = SubResource("SpriteFrames_g70c2")
+animation = &"damage"
 autoplay = "default"
-frame_progress = 0.425814
 
 [node name="Killzone" parent="." instance=ExtResource("2_aiugl")]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+scale = Vector2(3.4, 3.4)
 shape = SubResource("RectangleShape2D_td5ls")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+scale = Vector2(3.4, 3.4)
+target_position = Vector2(30, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+scale = Vector2(3.4, 3.4)
+target_position = Vector2(-30, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.147059, 0.294119)
+scale = Vector2(3.4, 3.4)
+shape = SubResource("RectangleShape2D_bjvtl")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 1160.0
+offset_bottom = 820.0
+scale = Vector2(0.07, 0.07)
+max_value = 3.0
+value = 3.0
+texture_under = ExtResource("3_drvju")
+texture_progress = ExtResource("4_3rnsl")
