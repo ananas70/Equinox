@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=3 uid="uid://bfdhgb6ks103x"]
 
-[ext_resource type="Script" path="res://scripts/summer_scripts/summer_key.gd" id="1_kh22a"]
+[ext_resource type="Script" uid="uid://ds2ej8r8iv1dg" path="res://scripts/summer_scripts/summer_key.gd" id="1_kh22a"]
 [ext_resource type="Texture2D" uid="uid://gubebo71x8y8" path="res://assets/sprites/Key Pack - Animated/Key 6/Key 6 - GOLD - Spritesheet.png" id="2_dv544"]
 [ext_resource type="Texture2D" uid="uid://8t3s2dxbv3pb" path="res://assets/sprites/FX/CollectSparkle/673.png" id="3_p6d1l"]
 
