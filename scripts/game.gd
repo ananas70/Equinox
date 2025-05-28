@@ -10,11 +10,37 @@ var anotimpuri = [
 ]
 var current_season_index = 0
 
+const SAVE_FILE_PATH := "user://save_data.json"
+
+func save_game():
+	var data = {
+		"season_index": current_season_index
+	}
+	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
+	file.store_string(JSON.stringify(data))
+	file.close()
+
+func load_game():
+	if not FileAccess.file_exists(SAVE_FILE_PATH):
+		return false
+	
+	var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
+	var content = file.get_as_text()
+	file.close()
+	
+	var data = JSON.parse_string(content)
+	if typeof(data) == TYPE_DICTIONARY and data.has("season_index"):
+		current_season_index = data["season_index"]
+		return true
+	return false
+
+
 func goto_next_season():
 	current_season_index += 1
 	if current_season_index >= anotimpuri.size():
 		current_season_index = 0  # sau încheie jocul
 
+	save_game()
 	load_screen_to_scene(anotimpuri[current_season_index])
 
 
