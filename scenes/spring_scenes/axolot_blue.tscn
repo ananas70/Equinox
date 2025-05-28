@@ -1,38 +1,74 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcp5b4fgfngy1"]
+[gd_scene load_steps=17 format=3 uid="uid://bcp5b4fgfngy1"]
 
 [ext_resource type="Texture2D" uid="uid://bopel53gunxtj" path="res://assets/sprites/Actor/Monsters/AxolotBlue/SpriteSheet.png" id="1_g5j5n"]
+[ext_resource type="Script" uid="uid://bsi8wl5ho8v1m" path="res://scripts/spring_scripts/axolot_blue.gd" id="1_mln2j"]
 [ext_resource type="PackedScene" uid="uid://c141t8yo365ph" path="res://scenes/spring_scenes/killzone.tscn" id="2_jx4bt"]
+[ext_resource type="Texture2D" uid="uid://cu5qp0k1sarmw" path="res://assets/sprites/Items/Weapons/healthbar_faded.png" id="3_22yi7"]
+[ext_resource type="Texture2D" uid="uid://mr3bivhf6o4p" path="res://assets/sprites/Items/Weapons/healthbar.png" id="4_mln2j"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yrirn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mln2j"]
 atlas = ExtResource("1_g5j5n")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ffje0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_edn2i"]
 atlas = ExtResource("1_g5j5n")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ubi82"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnrva"]
 atlas = ExtResource("1_g5j5n")
 region = Rect2(0, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xc4pt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nucnt"]
 atlas = ExtResource("1_g5j5n")
 region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui3eg"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6grld"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjq8f"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4b03"]
+atlas = ExtResource("1_g5j5n")
+region = Rect2(32, 48, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vmojs"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yrirn")
+"texture": SubResource("AtlasTexture_mln2j")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ffje0")
+"texture": SubResource("AtlasTexture_edn2i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ubi82")
+"texture": SubResource("AtlasTexture_rnrva")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xc4pt")
+"texture": SubResource("AtlasTexture_nucnt")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui3eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6grld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjq8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4b03")
 }],
 "loop": true,
 "name": &"default",
@@ -42,18 +78,46 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22yi7"]
 size = Vector2(64, 52)
 
-[node name="AxolotBlue" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mln2j"]
+size = Vector2(67, 48)
+
+[node name="AxolotBlue" type="CharacterBody2D"]
+script = ExtResource("1_mln2j")
 
 [node name="AxolotBlue" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(674, 407)
+position = Vector2(5, 2.00003)
 scale = Vector2(4.03125, 3.34375)
 sprite_frames = SubResource("SpriteFrames_vmojs")
+animation = &"damage"
 autoplay = "default"
-frame_progress = 0.542211
+flip_h = true
 
 [node name="Killzone" parent="." instance=ExtResource("2_jx4bt")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(674, 405)
+position = Vector2(9, 0)
 shape = SubResource("RectangleShape2D_22yi7")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 1160.0
+offset_bottom = 820.0
+scale = Vector2(0.07, 0.07)
+max_value = 6.0
+value = 6.0
+texture_under = ExtResource("3_22yi7")
+texture_progress = ExtResource("4_mln2j")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+target_position = Vector2(46, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+target_position = Vector2(-30, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, -1)
+shape = SubResource("RectangleShape2D_mln2j")
