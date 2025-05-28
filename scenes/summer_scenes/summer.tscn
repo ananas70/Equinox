@@ -14,10 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="12_sc5fc"]
 [ext_resource type="PackedScene" uid="uid://cwce32m10bgr4" path="res://scenes/summer_scenes/parrot.tscn" id="13_eh2su"]
 [ext_resource type="PackedScene" uid="uid://bygv6y0udnx5r" path="res://scenes/summer_scenes/slime.tscn" id="14_q4kw6"]
-[ext_resource type="PackedScene" uid="uid://dxvudj87gvla7" path="res://scenes/summer_scenes/summer_key.tscn" id="15_4o2gs"]
 [ext_resource type="Texture2D" uid="uid://bwgpemds1onac" path="res://assets/sprites/Key Pack - Animated/Key 6/GOLD/Key 6 - GOLD - frame0000.png" id="17_b16wg"]
 [ext_resource type="Texture2D" uid="uid://b86f86xm4cj1b" path="res://assets/sprites/Items/big_inventory_slot.png" id="17_irivl"]
-[ext_resource type="PackedScene" uid="uid://ilynotu7t2aq" path="res://scenes/summer_scenes/summer_chest.tscn" id="18_irivl"]
+[ext_resource type="PackedScene" uid="uid://bfdhgb6ks103x" path="res://scenes/summer_scenes/summer_key.tscn" id="18_b16wg"]
+[ext_resource type="PackedScene" path="res://scenes/summer_scenes/summer_chest.tscn" id="18_irivl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67jw8"]
 texture = ExtResource("2_3v0kh")
@@ -452,14 +452,13 @@ scale = Vector2(1, 1)
 [node name="slime" parent="." instance=ExtResource("14_q4kw6")]
 position = Vector2(-1250, 255)
 
-[node name="summerKey" parent="." instance=ExtResource("15_4o2gs")]
-texture_filter = 1
-position = Vector2(373, 585)
+[node name="SummerChest" parent="." instance=ExtResource("18_irivl")]
+position = Vector2(5509, 431)
 collision_layer = 3
 collision_mask = 3
 
-[node name="SummerChest" parent="." instance=ExtResource("18_irivl")]
-position = Vector2(5509, 431)
+[node name="summerKey" parent="." instance=ExtResource("18_b16wg")]
+position = Vector2(360, 591)
 collision_layer = 3
 collision_mask = 3
 
@@ -486,7 +485,7 @@ texture = ExtResource("17_b16wg")
 [node name="Sprite2D2" type="Sprite2D" parent="CollectedKey/Control"]
 z_index = 2
 texture_filter = 1
-position = Vector2(40, 40)
+position = Vector2(-14, 49)
 scale = Vector2(2.3, 2.3)
 texture = ExtResource("17_irivl")
 region_rect = Rect2(20, 20, 0, 0)
