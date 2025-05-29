@@ -31,8 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://b86f86xm4cj1b" path="res://assets/sprites/Items/big_inventory_slot.png" id="17_irivl"]
 [ext_resource type="PackedScene" uid="uid://bfdhgb6ks103x" path="res://scenes/summer_scenes/summer_key.tscn" id="18_b16wg"]
 [ext_resource type="PackedScene" uid="uid://ilynotu7t2aq" path="res://scenes/summer_scenes/summer_chest.tscn" id="18_irivl"]
-[ext_resource type="Script" uid="uid://d2hjpl6ggeta6" path="res://scripts/summer_scripts/summer_game_manager.gd" id="19_ey83h"]
-[ext_resource type="Script" uid="uid://coefh1umgcvc8" path="res://scripts/player_timer_manager.gd" id="20_vnm4r"]
+[ext_resource type="Script" path="res://scripts/summer_scripts/summer_game_manager.gd" id="19_ey83h"]
+[ext_resource type="Script" path="res://scripts/player_timer_manager.gd" id="20_vnm4r"]
 [ext_resource type="Texture2D" uid="uid://h36j5dlju6k7" path="res://assets/sprites/Backgrounds/Tilesets/TilesetDesert.png" id="21_g73am"]
 [ext_resource type="PackedScene" uid="uid://bqg8bf1bqqh8n" path="res://scenes/door.tscn" id="21_u8ai2"]
 [ext_resource type="PackedScene" uid="uid://djaia4i4k11ce" path="res://scenes/autumn_scenes/mushroom.tscn" id="22_ey83h"]
@@ -3523,7 +3523,8 @@ layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
+offset_left = -1152.0
+offset_right = -1112.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
@@ -3531,7 +3532,7 @@ grow_horizontal = 0
 visible = false
 z_index = 3
 texture_filter = 1
-position = Vector2(-14, 45)
+position = Vector2(40, 40)
 rotation = 0.785398
 scale = Vector2(2.1, 1.615)
 texture = ExtResource("17_b16wg")
@@ -3539,7 +3540,7 @@ texture = ExtResource("17_b16wg")
 [node name="Sprite2D2" type="Sprite2D" parent="CollectedKey/Control"]
 z_index = 2
 texture_filter = 1
-position = Vector2(-14, 49)
+position = Vector2(40, 40)
 scale = Vector2(2.3, 2.3)
 texture = ExtResource("17_irivl")
 region_rect = Rect2(20, 20, 0, 0)
