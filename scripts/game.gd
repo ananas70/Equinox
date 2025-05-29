@@ -44,6 +44,12 @@ func load_game():
 		return true
 	return false
 
+func delete_save():
+	if FileAccess.file_exists(SAVE_FILE_PATH):
+		var dir = DirAccess.open("user://")
+		if dir:
+			dir.remove(SAVE_FILE_PATH.get_file())
+
 
 func goto_next_season():
 	current_season_index += 1
