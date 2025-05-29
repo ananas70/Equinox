@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgs3aubyrb4bg"]
+
+[ext_resource type="Texture2D" uid="uid://dbklm841fkc2r" path="res://assets/sprites/fishing_minigame_assets/crosshair026.png" id="1_b11uh"]
+[ext_resource type="Script" uid="uid://d1hddhneeicwg" path="res://scripts/minigames_scripts/target.gd" id="1_fo612"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fo612"]
+size = Vector2(48, 48)
+
+[node name="Target" type="Area2D"]
+script = ExtResource("1_fo612")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b11uh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fo612")

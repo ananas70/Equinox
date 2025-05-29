@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://dmtjxh3obpdyw"]
+
+[ext_resource type="Script" uid="uid://ckippgpj546n6" path="res://scripts/minigames_scripts/fishing_game.gd" id="1_hu4lc"]
+[ext_resource type="Script" uid="uid://by6qpbiw8ab0a" path="res://scripts/minigames_scripts/fishing_minigame_wrap.gd" id="1_jnd7i"]
+[ext_resource type="Texture2D" uid="uid://c8j38shrfgj2d" path="res://assets/sprites/fishing_minigame_assets/Box_Orange_Square.png" id="2_jnd7i"]
+[ext_resource type="Texture2D" uid="uid://lowr3oyjj2ew" path="res://assets/sprites/fishing_minigame_assets/SlimSlider_Background.png" id="3_pc0xs"]
+[ext_resource type="Texture2D" uid="uid://cf33nad1vm6mc" path="res://assets/sprites/fishing_minigame_assets/SlimSlider_Base.png" id="4_s7c2y"]
+[ext_resource type="PackedScene" uid="uid://b143dw8ojvqpt" path="res://scenes/minigames_scenes/fish.tscn" id="5_862bq"]
+[ext_resource type="PackedScene" uid="uid://cgs3aubyrb4bg" path="res://scenes/minigames_scenes/target.tscn" id="6_yi638"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_id7ky"]
+texture = ExtResource("2_jnd7i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45bv"]
+texture = ExtResource("3_pc0xs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ydmm3"]
+texture = ExtResource("4_s7c2y")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1q0xg"]
+bg_color = Color(0.078421, 0.383494, 0.68537, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+
+[node name="FishingMinigame" type="CanvasLayer"]
+process_mode = 3
+process_priority = 10
+layer = 10
+offset = Vector2(350, 150)
+transform = Transform2D(1, 0, 0, 1, 350, 150)
+script = ExtResource("1_jnd7i")
+
+[node name="FishingGame" type="Control" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hu4lc")
+
+[node name="PanelContainer" type="PanelContainer" parent="FishingGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_id7ky")
+
+[node name="MarginContainer" type="MarginContainer" parent="FishingGame/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FishingGame/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="FishingGame/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CatchBar" type="ProgressBar" parent="FishingGame/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_n45bv")
+theme_override_styles/fill = SubResource("StyleBoxTexture_ydmm3")
+show_percentage = false
+
+[node name="AquaContainer" type="PanelContainer" parent="FishingGame/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_1q0xg")
+
+[node name="Fish" parent="FishingGame" node_paths=PackedStringArray("aquaContainer") instance=ExtResource("5_862bq")]
+position = Vector2(158.648, 164.275)
+aquaContainer = NodePath("../PanelContainer/MarginContainer/VBoxContainer/AquaContainer")
+
+[node name="Target" parent="FishingGame" instance=ExtResource("6_yi638")]
+position = Vector2(157.317, 161.613)
+
+[connection signal="minigame_finished" from="FishingGame" to="." method="_on_fishing_game_minigame_finished"]
+[connection signal="target_entered" from="FishingGame/Target" to="FishingGame" method="_on_target_target_entered"]
+[connection signal="target_exited" from="FishingGame/Target" to="FishingGame" method="_on_target_target_exited"]
