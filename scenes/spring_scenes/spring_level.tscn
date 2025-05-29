@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="23_ox4nh"]
 [ext_resource type="PackedScene" uid="uid://obk6ap0m7uqv" path="res://scenes/spring_scenes/portal.tscn" id="27_mpaxc"]
 [ext_resource type="PackedScene" uid="uid://c5ts3lnnekihf" path="res://scenes/spring_scenes/platform.tscn" id="28_6cjwk"]
-[ext_resource type="PackedScene" path="res://scenes/spring_scenes/butterfly_blue.tscn" id="29_tg7sc"]
+[ext_resource type="PackedScene" uid="uid://c15sbgm3l3d6s" path="res://scenes/spring_scenes/butterfly_blue.tscn" id="29_tg7sc"]
 [ext_resource type="PackedScene" uid="uid://eabl4gnvv5xn" path="res://scenes/spring_scenes/spring_key.tscn" id="30_pjb8v"]
 [ext_resource type="Texture2D" uid="uid://bjte1o00iuvqr" path="res://assets/sprites/Key Pack - Animated/Key 5/GOLD/Key 5 - GOLD - frame0005.png" id="31_ffje0"]
 [ext_resource type="PackedScene" uid="uid://bcp5b4fgfngy1" path="res://scenes/spring_scenes/axolot_blue.tscn" id="31_yrirn"]

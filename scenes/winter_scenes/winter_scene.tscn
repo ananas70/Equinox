@@ -118,10 +118,10 @@ layer_0/tile_data = PackedInt32Array(786416, 1703942, 1, 851952, 1703942, 2, 786
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_p8hs8")]
 z_index = 1
-position = Vector2(2544, 343)
+position = Vector2(-1597, 493)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(1.66667, 2.33333)
+position = Vector2(1.66667, 4.66666)
 scale = Vector2(0.333333, 0.333333)
 limit_left = -2048
 limit_top = 0
