@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b0iis8pkq4fd5" path="res://scenes/autumn_scenes/falling_platform.tscn" id="12_5wi2v"]
 [ext_resource type="PackedScene" uid="uid://l0n3trvhh4rw" path="res://scenes/autumn_scenes/yellow_bat.tscn" id="14_6w2qg"]
 [ext_resource type="PackedScene" uid="uid://gjqdem2qsqht" path="res://scenes/autumn_scenes/small_platform.tscn" id="14_l6ggl"]
-[ext_resource type="PackedScene" path="res://scenes/autumn_scenes/move_crate.tscn" id="15_aquik"]
+[ext_resource type="PackedScene" uid="uid://cek1gy5a43gfn" path="res://scenes/autumn_scenes/move_crate.tscn" id="15_aquik"]
 [ext_resource type="PackedScene" uid="uid://dsdpoib46434n" path="res://scenes/autumn_scenes/mole.tscn" id="16_bt5vk"]
 [ext_resource type="PackedScene" uid="uid://bhwl2vhfkuc3l" path="res://scenes/autumn_scenes/autumn_key.tscn" id="17_x85jb"]
 [ext_resource type="PackedScene" uid="uid://dubq1p2yd3jpt" path="res://scenes/autumn_scenes/autumn_chest.tscn" id="18_5bsg7"]
@@ -683,7 +683,7 @@ target_portal = NodePath("../Portal")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("6_47ho2")]
 z_index = 1
-position = Vector2(6432, 356)
+position = Vector2(116, 545)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(-23, -180.667)

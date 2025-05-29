@@ -2933,6 +2933,7 @@ layer_0/tile_data = PackedInt32Array(196619, 1114112, 24, 196620, 1114112, 26, -
 
 [node name="TileMap2" type="TileMap" parent="."]
 z_index = 1
+texture_filter = 1
 scale = Vector2(3, 3)
 tile_set = SubResource("TileSet_uqj4q")
 format = 2
