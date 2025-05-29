@@ -4,6 +4,7 @@ extends Node2D
 
 var anotimpuri = [
 	"res://scenes/autumn_scenes/autumn_scene.tscn",
+	"res://scenes/minigames_scenes/fishing_scene.tscn",
 	"res://scenes/winter_scenes/winter_scene.tscn",
 	"res://scenes/spring_scenes/spring_level.tscn",
 	"res://scenes/summer_scenes/summer.tscn"

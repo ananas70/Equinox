@@ -9,6 +9,7 @@ extends CharacterBody2D
 const SPEED = 100.0
 
 var fishing = true
+signal close_scene
 
 func _ready() -> void:
 	waiting.visible = false
@@ -37,4 +38,7 @@ func _start_mini_game():
 func _on_fishing_minigame_minigame_finished_done() -> void:
 	print("Mini-game done!")
 	fishing = false
+	await get_tree().create_timer(2).timeout
+	
+	emit_signal("close_scene")
 	

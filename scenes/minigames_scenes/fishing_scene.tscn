@@ -2948,4 +2948,5 @@ scale = Vector2(2.5, 2.5)
 [node name="FishingMinigame" parent="." instance=ExtResource("4_mhuo7")]
 visible = false
 
+[connection signal="close_scene" from="GoblinPlayer" to="." method="_on_goblin_player_close_scene"]
 [connection signal="minigame_finished_done" from="FishingMinigame" to="GoblinPlayer" method="_on_fishing_minigame_minigame_finished_done"]
