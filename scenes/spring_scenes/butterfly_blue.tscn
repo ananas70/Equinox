@@ -1,7 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://c15sbgm3l3d6s"]
+[gd_scene load_steps=17 format=3 uid="uid://c15sbgm3l3d6s"]
 
+[ext_resource type="Script" uid="uid://b058nevfxg5mx" path="res://scripts/spring_scripts/butterfly_blue.gd" id="1_mi87l"]
 [ext_resource type="Texture2D" uid="uid://duiixjefojv57" path="res://assets/sprites/Actor/Monsters/ButterflyBlue/SpriteSheet.png" id="1_tuq8o"]
 [ext_resource type="PackedScene" uid="uid://c141t8yo365ph" path="res://scenes/spring_scenes/killzone.tscn" id="2_dubc6"]
+[ext_resource type="Texture2D" uid="uid://cu5qp0k1sarmw" path="res://assets/sprites/Items/Weapons/healthbar_faded.png" id="4_lvcwa"]
+[ext_resource type="Texture2D" uid="uid://mr3bivhf6o4p" path="res://assets/sprites/Items/Weapons/healthbar.png" id="5_nfod4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yjgm"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28k16"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t25ei"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y30oo"]
+atlas = ExtResource("1_tuq8o")
+region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eoidg"]
 atlas = ExtResource("1_tuq8o")
@@ -23,6 +42,23 @@ region = Rect2(0, 48, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7yjgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28k16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t25ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y30oo")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_eoidg")
 }, {
 "duration": 1.0,
@@ -42,18 +78,39 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_28k16"]
 size = Vector2(15.4074, 15.04)
 
-[node name="ButterflyBlue" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glkis"]
+size = Vector2(59, 58)
+
+[node name="ButterflyBlue" type="CharacterBody2D"]
+script = ExtResource("1_mi87l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(15.5, 20.5)
 scale = Vector2(3.8125, 3.5625)
 sprite_frames = SubResource("SpriteFrames_7yjgm")
+animation = &"damage"
 autoplay = "default"
-frame_progress = 0.193677
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_dubc6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
 position = Vector2(0.918032, -0.140352)
 shape = SubResource("RectangleShape2D_28k16")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19.5, 19)
+shape = SubResource("RectangleShape2D_glkis")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -40.0
+offset_top = -80.0
+offset_right = 1160.0
+offset_bottom = 820.0
+scale = Vector2(0.07, 0.07)
+max_value = 6.0
+value = 6.0
+texture_under = ExtResource("4_lvcwa")
+texture_progress = ExtResource("5_nfod4")

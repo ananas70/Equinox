@@ -3,52 +3,68 @@ extends CharacterBody2D
 const SPEED = 60
 var direction = 1
 var stunned := false  # blocăm mișcarea în timpul damage
+
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
-@onready var bear: AnimatedSprite2D = $Bear
+@onready var health_bar: TextureProgressBar = $HealthBar
+@onready var cyclop: AnimatedSprite2D = $Cyclop
 
 @export var max_health := 6
 var current_health := max_health
 
 func _ready():
 	add_to_group("enemy")
+	health_bar.visible = false
+	health_bar.value = current_health
+	print("🚀 AxolotBlue a intrat în grupul enemy")
 
 func take_damage():
+	print("🎯 take_damage() a fost apelată")
+
 	if stunned:
-		return  # ignoră lovitura dacă e deja în damage
+		print("🛑 E deja în stunned, ignorăm lovitura")
+		return
 
 	current_health -= 1
-	$HealthBar.visible = true
-	$HealthBar.value = current_health
+	current_health = clamp(current_health, 0, max_health)
+
+	print("❤️ Viața actuală:", current_health)
+
+	health_bar.visible = true
+	health_bar.value = current_health
 
 	stunned = true
 	velocity = Vector2.ZERO
-	bear.play("damage")
+	cyclop.play("damage")
 	set_physics_process(false)
 
-	await bear.animation_finished
+	await cyclop.animation_finished
 
 	stunned = false
 	set_physics_process(true)
 
 	if current_health <= 0:
+		print("💀 Inamicul a murit")
 		die()
-		
-	bear.play("default")
+	else:
+		print("✅ Nu a murit încă, continuăm animația default")
+
+	cyclop.play("default")
 
 func die():
+	print("🧨 Se apelează queue_free()")
 	queue_free()
 
 func _physics_process(delta: float) -> void:
 	if stunned:
-		return  # nu ne mișcăm în timpul damage
-		
+		return
+
 	if ray_cast_right.is_colliding():
 		direction = -1
-		bear.flip_h = false
+		cyclop.flip_h = false
 	elif ray_cast_left.is_colliding():
 		direction = 1
-		bear.flip_h = true
+		cyclop.flip_h = true
 
 	velocity.x = direction * SPEED
 	velocity.y = 0

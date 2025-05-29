@@ -372,7 +372,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ltkkf")
 animation = &"sparkle"
 autoplay = "sparkle"
-frame_progress = 0.493237
+frame_progress = 0.0549095
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

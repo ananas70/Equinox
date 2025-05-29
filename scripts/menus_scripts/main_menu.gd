@@ -4,13 +4,21 @@ extends Control
 func _on_start_pressed() -> void:
 	var game = get_tree().root.get_node("Game")
 
-	if Globals.intro_seen:
-		# sari direct la anotimp
-		game.current_season_index = 0
-		game.load_screen_to_scene(game.anotimpuri[0])
+	if game.load_game():
+		# Dacă există un joc salvat, îl reîncarcă
+		game.load_screen_to_scene(game.anotimpuri[game.current_season_index])
 	else:
-		Globals.intro_seen = true
-		game.load_screen_to_scene("res://scenes/intro_cut_scene.tscn")
+		if Globals.intro_seen:
+			game.current_season_index = 0
+			game.save_game()  # salvăm startul de la anotimpul 0
+			game.load_screen_to_scene(game.anotimpuri[0])
+		else:
+			Globals.intro_seen = true
+			game.current_season_index = 0
+			game.save_game()  # salvăm înainte de intro
+			game.load_screen_to_scene("res://scenes/intro_cut_scene.tscn")
+
+
 
 func _on_options_pressed() -> void:
 	var game = get_tree().root.get_node("Game")

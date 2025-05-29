@@ -264,7 +264,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_plc2m"]
-resource_name = "pop_honey"
+resource_name = "pop_apple"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -305,7 +305,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_skwv5"]
 _data = {
 &"RESET": SubResource("Animation_m37xh"),
-&"pop_honey": SubResource("Animation_plc2m")
+&"pop_apple": SubResource("Animation_plc2m")
 }
 
 [node name="SpringChest" type="Area2D"]
@@ -334,6 +334,7 @@ scale = Vector2(0.07, 0.07)
 texture = ExtResource("3_4417x")
 
 [node name="AppleContainer" type="Node2D" parent="."]
+position = Vector2(-3, 1)
 
 [node name="Apple" type="Sprite2D" parent="AppleContainer"]
 texture_filter = 1
@@ -350,7 +351,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ltkkf")
 animation = &"sparkle"
 autoplay = "sparkle"
-frame_progress = 0.493237
+frame_progress = 0.674285
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

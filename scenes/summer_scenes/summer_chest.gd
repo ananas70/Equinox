@@ -28,6 +28,7 @@ func open_chest():
 	if opened:
 		return # deja deschis, nu mai face nimic
 	opened = true
+	get_node("../GameManager").chest_opened = true
 	
 	chest_sprite.play("open")
 	await chest_sprite.animation_finished
