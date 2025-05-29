@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://b5b1bn1xjad1i"]
+[gd_scene load_steps=79 format=3 uid="uid://b5b1bn1xjad1i"]
 
 [ext_resource type="Texture2D" uid="uid://cd4hh4wv51ax8" path="res://assets/sprites/3 - Tropics/Background parts/_Complete_static_BG_(288 x 208).png" id="1_iujmj"]
 [ext_resource type="Texture2D" uid="uid://c68ftuatoiex6" path="res://assets/sprites/3 - Tropics/Terrain (16 x 16).png" id="2_3v0kh"]
@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cul7daixlrgkr" path="res://assets/sprites/5 - Misc. universal tiles/Flowers (16 x 16).png" id="8_le1ow"]
 [ext_resource type="PackedScene" uid="uid://dydila04ouiux" path="res://scenes/character_body_2d.tscn" id="8_t7xgw"]
 [ext_resource type="Texture2D" uid="uid://bqajwmmtf6jfb" path="res://assets/sprites/Backgrounds/Tilesets/TilesetLogic.png" id="9_8fcmw"]
-[ext_resource type="PackedScene" uid="uid://du3u4isyneih6" path="res://scenes/summer_scenes/node_2d.tscn" id="10_gq0q1"]
+[ext_resource type="PackedScene" path="res://scenes/summer_scenes/node_2d.tscn" id="10_gq0q1"]
 [ext_resource type="Texture2D" uid="uid://crfb37n5a54ro" path="res://assets/sprites/Backgrounds/Tilesets/TilesetNature.png" id="10_phc2p"]
 [ext_resource type="Texture2D" uid="uid://b27vt3dcbu8rs" path="res://assets/sprites/Backgrounds/Tilesets/TilesetRelief.png" id="11_emthj"]
-[ext_resource type="PackedScene" uid="uid://b85intc05ogag" path="res://scenes/summer_scenes/platform_1.tscn" id="11_wdybb"]
+[ext_resource type="PackedScene" path="res://scenes/summer_scenes/platform_1.tscn" id="11_wdybb"]
 [ext_resource type="Texture2D" uid="uid://cox5jtgh4f08v" path="res://assets/sprites/Backgrounds/Tilesets/TilesetReliefDetail.png" id="12_147ih"]
 [ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="12_sc5fc"]
 [ext_resource type="PackedScene" uid="uid://cwce32m10bgr4" path="res://scenes/summer_scenes/parrot.tscn" id="13_eh2su"]
@@ -32,12 +32,13 @@
 [ext_resource type="PackedScene" uid="uid://bfdhgb6ks103x" path="res://scenes/summer_scenes/summer_key.tscn" id="18_b16wg"]
 [ext_resource type="PackedScene" uid="uid://ilynotu7t2aq" path="res://scenes/summer_scenes/summer_chest.tscn" id="18_irivl"]
 [ext_resource type="Script" path="res://scripts/summer_scripts/summer_game_manager.gd" id="19_ey83h"]
-[ext_resource type="Script" path="res://scripts/player_timer_manager.gd" id="20_vnm4r"]
+[ext_resource type="Script" uid="uid://coefh1umgcvc8" path="res://scripts/player_timer_manager.gd" id="20_vnm4r"]
 [ext_resource type="Texture2D" uid="uid://h36j5dlju6k7" path="res://assets/sprites/Backgrounds/Tilesets/TilesetDesert.png" id="21_g73am"]
 [ext_resource type="PackedScene" uid="uid://bqg8bf1bqqh8n" path="res://scenes/door.tscn" id="21_u8ai2"]
 [ext_resource type="PackedScene" uid="uid://djaia4i4k11ce" path="res://scenes/autumn_scenes/mushroom.tscn" id="22_ey83h"]
 [ext_resource type="Texture2D" uid="uid://b7uiyislsile6" path="res://assets/sprites/Backgrounds/Tilesets/TilesetDungeon.png" id="22_giks2"]
 [ext_resource type="Texture2D" uid="uid://cvxd8taxdioet" path="res://assets/sprites/Backgrounds/Tilesets/TilesetElement.png" id="23_4652r"]
+[ext_resource type="AudioStream" uid="uid://c0kpokhklqj1s" path="res://assets/sounds/summer.mp3" id="39_a8f15"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_67jw8"]
 texture = ExtResource("2_3v0kh")
@@ -3630,5 +3631,9 @@ collision_mask = 3
 [node name="Mushroom" parent="." instance=ExtResource("22_ey83h")]
 position = Vector2(1724, 216)
 scale = Vector2(3, 3)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_a8f15")
+autoplay = true
 
 [connection signal="key_collected" from="summerKey" to="GameManager" method="_on_key_collected"]

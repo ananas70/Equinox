@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djiqo01l1llly" path="res://scripts/outro_cut_scene.gd" id="1_mpsjp"]
 [ext_resource type="AudioStream" uid="uid://l3u40cpojmtc" path="res://assets/sounds/intro_cutscene_background_music.mp3" id="2_vcncb"]
-[ext_resource type="AudioStream" uid="uid://b0sq6mi3eyooc" path="res://assets/sounds/outro-voice.mp3" id="3_mpsjp"]
+[ext_resource type="AudioStream" uid="uid://c3ildlc3qvn8r" path="res://assets/sounds/outro_voice.mp3" id="3_mpsjp"]
 
 [node name="OutroCutScene" type="CanvasLayer"]
 script = ExtResource("1_mpsjp")

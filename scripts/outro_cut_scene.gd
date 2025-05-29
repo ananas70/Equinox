@@ -5,37 +5,60 @@ extends CanvasLayer
 @onready var text_switch_timer: Timer = $TextSwitchTimer
 
 var slides = [
+		{
+		"image": "res://assets/images/ingredients_yryneuys.png",
+	 	"text": "By collecting the four magical ingredients, The Frog managed to brew a potion that put the dragon into a deep sleep.",
+		"zoom": true,
+		"duration": 7.0
+	},
 	{
 		"image": "res://assets/images/frog_and_diana/frog_rescues_diana.png",
-	 	"text": "The Frog bravely rescued Diana from the dragon’s cave.",
+	 	"text": "With courage in his heart, he entered the dark cave and bravely rescued Diana.",
 		"zoom": true,
-		"duration": 8.5 
+		"duration": 5.8
 	},
 	{ 
 		"image": "res://assets/images/frog_and_diana/diana_wants_to_unmask_frog.png",
 		"text1": "When they arrived at the gates of the kingdom, Diana turned to him and gently asked",
 		"text2": "“Please, take off your mask — I want to see your true face.”",
-		"text_1_duration": 5.0,
-		"zoom": false,
-		"duration": 10.0
-	},
-	
-	{
-		"image": "res://assets/images/frog_and_diana/diana_wants_to_unmask_frog2.png",
-	 	"text1": "Ashamed, the Frog hesitated. “I cannot,” he said, “I carry a hideous flaw.”",
-		"text2": "But Diana insisted, saying, “What matters to me is your soul, not your appearance.”",
-		"text_1_duration": 5.0,
+		"text_1_duration": 4.5,
 		"zoom": true,
-		"duration": 8.5 
+		"duration": 8.3
 	},
 	{
 		"image": "res://assets/images/frog_and_diana/diana_wants_to_unmask_frog2.png",
 	 	"text1": "Ashamed, the Frog hesitated. “I cannot,” he said, “I carry a hideous flaw.”",
 		"text2": "But Diana insisted, saying, “What matters to me is your soul, not your appearance.”",
-		"text_1_duration": 5.0,
+		"text_1_duration": 6.5,
+		"zoom": true,
+		"duration": 12.0 
+	},
+	{
+		"image": "res://assets/images/frog_and_diana/diana_falls_in_love_with_frog.png",
+	 	"text1": "With sorrow in his heart, the Frog slowly removed his mask.",
+		"text2": "To his surprise, he found not fear or disgust in Diana’s eyes — but love.",
+		"text_1_duration": 3.0,
 		"zoom": true,
 		"duration": 8.5 
 	},
+	{
+		"image": "res://assets/images/frog_and_diana/diana_confesses_love_to_frog.png",
+	 	"text": "She confessed her feelings to him, for his courage, his kindness, and everything good he had shown her.",
+		"zoom": true,
+		"duration": 6.5 
+	},
+	{
+		"image": "res://assets/images/frog_and_diana/diana_and_frog_get_married.png",
+	 	"text": "A few months later, Diana and the Frog were wed in a joyous celebration, surrounded by the cheers of their people.",
+		"zoom": true,
+		"duration": 7.5 
+	},
+	{
+		"image": "res://assets/images/glodenor_celebrate.png",
+	 	"text": "And so, the kingdom of Glodenor found happiness once more, and its people lived in peace and love for the rest of their days.",
+		"zoom": true,
+		"duration": 8.5 
+	}
 ]
 
 var current_slide = 0
@@ -89,7 +112,7 @@ func _on_timer_timeout() -> void:
 		show_slide(current_slide)
 	else:
 		var game = get_tree().root.get_node("Game")
-		game.load_screen_to_scene("res://scenes/autumn_scenes/autumn_scene.tscn")
+		game.load_screen_to_scene("res://scenes/menus/victory_menu.tscn")
 
 
 func _on_text_switch_timer_timeout() -> void:
@@ -109,7 +132,7 @@ func skip_cutscene():
 	# Poți adăuga și un fade-out, dacă vrei tranziție frumoasă
 
 	var game = get_tree().root.get_node("Game")
-	game.load_screen_to_scene("res://scenes/autumn_scenes/autumn_scene.tscn")
+	game.load_screen_to_scene("res://scenes/menus/victory_menu.tscn")
 
 	# Distrugi această scenă dacă e nevoie
 	queue_free()

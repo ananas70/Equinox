@@ -1,7 +1,7 @@
-[gd_scene load_steps=44 format=3 uid="uid://djcphoe3fyk1x"]
+[gd_scene load_steps=45 format=3 uid="uid://djcphoe3fyk1x"]
 
 [ext_resource type="Texture2D" uid="uid://8ssd7keefjfs" path="res://assets/sprites/2 - Autumn Forest/Background parts/_Complete_static_BG_(288 x 208).png" id="1_8s1ae"]
-[ext_resource type="Script" path="res://scripts/autumn_scripts/autumn_game_manager.gd" id="1_dv1t6"]
+[ext_resource type="Script" uid="uid://ipjxeqn1e4um" path="res://scripts/autumn_scripts/autumn_game_manager.gd" id="1_dv1t6"]
 [ext_resource type="Texture2D" uid="uid://bsehvvufxm4j4" path="res://assets/sprites/2 - Autumn Forest/Terrain (16 x 16).png" id="2_qg2la"]
 [ext_resource type="Texture2D" uid="uid://cao44gtuskwcy" path="res://assets/sprites/2 - Autumn Forest/Autumn_entities (16 x 16).png" id="3_opxlr"]
 [ext_resource type="Texture2D" uid="uid://bpl0e27g78u42" path="res://assets/sprites/4 - Winter World/ice level demo.png" id="4_dv1t6"]
@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b0iis8pkq4fd5" path="res://scenes/autumn_scenes/falling_platform.tscn" id="12_5wi2v"]
 [ext_resource type="PackedScene" uid="uid://l0n3trvhh4rw" path="res://scenes/autumn_scenes/yellow_bat.tscn" id="14_6w2qg"]
 [ext_resource type="PackedScene" uid="uid://gjqdem2qsqht" path="res://scenes/autumn_scenes/small_platform.tscn" id="14_l6ggl"]
-[ext_resource type="PackedScene" uid="uid://cek1gy5a43gfn" path="res://scenes/autumn_scenes/move_crate.tscn" id="15_aquik"]
+[ext_resource type="PackedScene" path="res://scenes/autumn_scenes/move_crate.tscn" id="15_aquik"]
 [ext_resource type="PackedScene" uid="uid://dsdpoib46434n" path="res://scenes/autumn_scenes/mole.tscn" id="16_bt5vk"]
 [ext_resource type="PackedScene" uid="uid://bhwl2vhfkuc3l" path="res://scenes/autumn_scenes/autumn_key.tscn" id="17_x85jb"]
 [ext_resource type="PackedScene" uid="uid://dubq1p2yd3jpt" path="res://scenes/autumn_scenes/autumn_chest.tscn" id="18_5bsg7"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bdj8sqi3euwn8" path="res://scenes/autumn_scenes/portal.tscn" id="22_m38mj"]
 [ext_resource type="PackedScene" uid="uid://ci6qc84wcp5jm" path="res://scenes/autumn_scenes/fog.tscn" id="24_3j87w"]
 [ext_resource type="PackedScene" uid="uid://bqg8bf1bqqh8n" path="res://scenes/door.tscn" id="26_wr7hf"]
+[ext_resource type="AudioStream" uid="uid://boc3udj8618uj" path="res://assets/sounds/autumn.mp3" id="27_wr7hf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6w2qg"]
 texture = ExtResource("2_qg2la")
@@ -852,5 +853,9 @@ collision_mask = 3
 position = Vector2(7613, 523)
 collision_layer = 3
 collision_mask = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_wr7hf")
+autoplay = true
 
 [connection signal="key_collected" from="AutumnKey" to="GameManager" method="_on_key_collected"]

@@ -46,6 +46,18 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
+[node name="Button" type="Button" parent="TabContainer/Difficulty/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Easy"
+
+[node name="Button2" type="Button" parent="TabContainer/Difficulty/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Medium"
+
+[node name="Button3" type="Button" parent="TabContainer/Difficulty/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Hard"
+
 [node name="Sound" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
@@ -67,6 +79,18 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Mute Sound"
+
+[node name="Button" type="Button" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Increase Volume"
+
+[node name="Button2" type="Button" parent="TabContainer/Sound/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Decrease Volume"
 
 [node name="Graphics" type="TabBar" parent="TabContainer"]
 visible = false
@@ -90,32 +114,14 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
+[node name="Button" type="Button" parent="TabContainer/Graphics/MarginContainer/VBoxContainer"]
 layout_mode = 2
-metadata/_tab_index = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 24
-theme_override_constants/margin_right = 24
-theme_override_constants/margin_bottom = 24
-
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
+text = "Change Resolution"
 
 [node name="Credits" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 4
+metadata/_tab_index = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Credits"]
 layout_mode = 1

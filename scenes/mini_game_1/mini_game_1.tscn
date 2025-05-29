@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=3 uid="uid://b2vfswktyhd1t"]
+
+[ext_resource type="Texture2D" uid="uid://bwudmhr76vy4n" path="res://assets/images/minigame1-background.png" id="1_jbqk3"]
+[ext_resource type="Script" uid="uid://c187b83hp4uge" path="res://scripts/mini_game_1/mini_game_1.gd" id="1_tag2k"]
+[ext_resource type="PackedScene" uid="uid://tcvfgsdhlc6a" path="res://scenes/mini_game_1/draggable.tscn" id="2_37tdx"]
+[ext_resource type="Texture2D" uid="uid://5sjcud2sege" path="res://assets/images/princess_diana/princess_resized_1536x1024.png" id="3_iq6x4"]
+[ext_resource type="Texture2D" uid="uid://c7l1tqo80n5o5" path="res://assets/images/the_frog_man/frog_drag.png" id="4_xte0r"]
+[ext_resource type="Texture2D" uid="uid://bmc1xc1c561cw" path="res://assets/images/yryneus_malus/yryneus_drag.png" id="5_tag2k"]
+[ext_resource type="Texture2D" uid="uid://bvesu26ko0t3a" path="res://assets/images/crown.png" id="6_hj4ds"]
+[ext_resource type="Texture2D" uid="uid://dg0y636rtrqk5" path="res://assets/images/sword.png" id="7_4m2bl"]
+[ext_resource type="Texture2D" uid="uid://c4na8t5qb0nks" path="res://assets/images/coins.png" id="8_2nob8"]
+[ext_resource type="Texture2D" uid="uid://b32ib2gx7njfq" path="res://assets/images/qmark.jpg" id="9_eap4d"]
+[ext_resource type="Texture2D" uid="uid://cag1qqychkec" path="res://assets/images/cute-cartoon-orange-arrow-4.png" id="10_3olni"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tag2k"]
+texture = ExtResource("1_jbqk3")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tag2k")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(2800, 2000)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tag2k")
+
+[node name="TextureRect1" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 23.0
+offset_right = 286.0
+offset_bottom = 193.0
+texture = ExtResource("3_iq6x4")
+expand_mode = 1
+
+[node name="TextureRect3" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 442.0
+offset_right = 290.0
+offset_bottom = 612.0
+texture = ExtResource("4_xte0r")
+expand_mode = 1
+
+[node name="TextureRect2" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 230.0
+offset_right = 286.0
+offset_bottom = 400.0
+texture = ExtResource("5_tag2k")
+expand_mode = 1
+
+[node name="Drect3" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 445.0
+offset_right = 975.0
+offset_bottom = 615.0
+texture = ExtResource("6_hj4ds")
+expand_mode = 1
+
+[node name="Drect2" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 735.0
+offset_top = 232.0
+offset_right = 975.0
+offset_bottom = 402.0
+texture = ExtResource("7_4m2bl")
+expand_mode = 1
+
+[node name="Drect1" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 24.0
+offset_right = 974.0
+offset_bottom = 194.0
+texture = ExtResource("8_2nob8")
+expand_mode = 1
+
+[node name="TargetRect1" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 23.0
+offset_right = 594.0
+offset_bottom = 193.0
+texture = ExtResource("9_eap4d")
+expand_mode = 1
+
+[node name="TargetRect2" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 442.0
+offset_right = 598.0
+offset_bottom = 612.0
+texture = ExtResource("9_eap4d")
+expand_mode = 1
+
+[node name="TargetRect3" parent="." instance=ExtResource("2_37tdx")]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 230.0
+offset_right = 594.0
+offset_bottom = 400.0
+texture = ExtResource("9_eap4d")
+expand_mode = 1
+
+[node name="Cute-cartoon-orange-arrow-4" type="Sprite2D" parent="."]
+position = Vector2(658.375, 114.313)
+scale = Vector2(0.0662973, 0.0601852)
+texture = ExtResource("10_3olni")
+
+[node name="Cute-cartoon-orange-arrow-5" type="Sprite2D" parent="."]
+position = Vector2(660.375, 523.313)
+scale = Vector2(0.0662973, 0.0601852)
+texture = ExtResource("10_3olni")
+
+[node name="Cute-cartoon-orange-arrow-6" type="Sprite2D" parent="."]
+position = Vector2(658.375, 315.313)
+scale = Vector2(0.0662973, 0.0601852)
+texture = ExtResource("10_3olni")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1113.0
+offset_top = 199.0
+offset_right = 1233.0
+offset_bottom = 494.0
+theme_override_font_sizes/font_size = 32
+text = "Check"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

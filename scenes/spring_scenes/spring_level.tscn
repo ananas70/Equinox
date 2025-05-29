@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://c2xhds4i3r43i"]
+[gd_scene load_steps=61 format=3 uid="uid://c2xhds4i3r43i"]
 
 [ext_resource type="Texture2D" uid="uid://dt2xdddsw2w2i" path="res://assets/sprites/1 - Grassland/Background parts/_Complete_static_BG_(288 x 208).png" id="1_5k8ae"]
 [ext_resource type="Texture2D" uid="uid://ceo8awu6m5ht7" path="res://assets/sprites/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_l7b1u"]
@@ -25,13 +25,14 @@
 [ext_resource type="PackedScene" uid="uid://b2x7p8wtw1udp" path="res://scenes/killzone.tscn" id="23_ox4nh"]
 [ext_resource type="PackedScene" uid="uid://obk6ap0m7uqv" path="res://scenes/spring_scenes/portal.tscn" id="27_mpaxc"]
 [ext_resource type="PackedScene" uid="uid://c5ts3lnnekihf" path="res://scenes/spring_scenes/platform.tscn" id="28_6cjwk"]
-[ext_resource type="PackedScene" uid="uid://c15sbgm3l3d6s" path="res://scenes/spring_scenes/butterfly_blue.tscn" id="29_tg7sc"]
+[ext_resource type="PackedScene" path="res://scenes/spring_scenes/butterfly_blue.tscn" id="29_tg7sc"]
 [ext_resource type="PackedScene" uid="uid://eabl4gnvv5xn" path="res://scenes/spring_scenes/spring_key.tscn" id="30_pjb8v"]
 [ext_resource type="Texture2D" uid="uid://bjte1o00iuvqr" path="res://assets/sprites/Key Pack - Animated/Key 5/GOLD/Key 5 - GOLD - frame0005.png" id="31_ffje0"]
 [ext_resource type="PackedScene" uid="uid://bcp5b4fgfngy1" path="res://scenes/spring_scenes/axolot_blue.tscn" id="31_yrirn"]
 [ext_resource type="PackedScene" uid="uid://bqg8bf1bqqh8n" path="res://scenes/door.tscn" id="32_ffje0"]
 [ext_resource type="Texture2D" uid="uid://b86f86xm4cj1b" path="res://assets/sprites/Items/big_inventory_slot.png" id="32_ubi82"]
 [ext_resource type="PackedScene" uid="uid://dhcsottqqkif2" path="res://scenes/spring_scenes/spring_chest.tscn" id="33_ubi82"]
+[ext_resource type="AudioStream" uid="uid://5ic8mkfrtpuw" path="res://assets/sounds/spring.mp3" id="34_vmojs"]
 [ext_resource type="PackedScene" uid="uid://c7t5kiu6uiupy" path="res://scenes/spring_scenes/cyclop.tscn" id="34_xc4pt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_deqru"]
@@ -1895,5 +1896,9 @@ position = Vector2(7409, 550)
 
 [node name="ButterflyBlue2" parent="." instance=ExtResource("29_tg7sc")]
 position = Vector2(9423, 505)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_vmojs")
+autoplay = true
 
 [connection signal="key_collected" from="SpringKey" to="GameManager" method="_on_key_collected"]

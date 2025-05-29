@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc3lo4wbj1a0s"]
+[gd_scene load_steps=8 format=3 uid="uid://dc3lo4wbj1a0s"]
 
 [ext_resource type="Texture2D" uid="uid://tf45vakgbve7" path="res://assets/sprites/fishing_minigame_assets/output_tileset.png" id="1_mhuo7"]
 [ext_resource type="Script" uid="uid://dcr2krgfvfyv7" path="res://scripts/minigames_scripts/fishing_scene.gd" id="1_uvmaj"]
 [ext_resource type="PackedScene" uid="uid://8ra3c38jyd6k" path="res://scenes/minigames_scenes/goblin_player.tscn" id="2_ciuly"]
 [ext_resource type="PackedScene" uid="uid://dmtjxh3obpdyw" path="res://scenes/minigames_scenes/fishing_minigame.tscn" id="4_mhuo7"]
+[ext_resource type="AudioStream" uid="uid://dprcjtwavbjuh" path="res://assets/sounds/fishing.mp3" id="5_iq7pl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sfsqs"]
 texture = ExtResource("1_mhuo7")
@@ -2947,6 +2948,10 @@ scale = Vector2(2.5, 2.5)
 
 [node name="FishingMinigame" parent="." instance=ExtResource("4_mhuo7")]
 visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iq7pl")
+autoplay = true
 
 [connection signal="close_scene" from="GoblinPlayer" to="." method="_on_goblin_player_close_scene"]
 [connection signal="minigame_finished_done" from="FishingMinigame" to="GoblinPlayer" method="_on_fishing_minigame_minigame_finished_done"]

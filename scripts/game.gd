@@ -1,19 +1,25 @@
 extends Node2D
 @onready var level: Node2D = $Level
 @onready var ui: CanvasLayer = $UI
+var debug_mode := false  # setat pe true când vrei să NU salvezi progresul
 
 var anotimpuri = [
 	"res://scenes/autumn_scenes/autumn_scene.tscn",
 	"res://scenes/minigames_scenes/fishing_scene.tscn",
 	"res://scenes/winter_scenes/winter_scene.tscn",
 	"res://scenes/spring_scenes/spring_level.tscn",
-	"res://scenes/summer_scenes/summer.tscn"
+	"res://scenes/mini_game_1/mini_game_1.tscn",
+	"res://scenes/summer_scenes/summer.tscn",
+	"res://scenes/outro_cut_scene.tscn"
 ]
 var current_season_index = 0
 
 const SAVE_FILE_PATH := "user://save_data.json"
 
 func save_game():
+	if debug_mode:
+		print("DEBUG: Game not saved.")
+		return  # oprește salvarea dacă e activ debug-ul
 	var data = {
 		"season_index": current_season_index
 	}
@@ -22,6 +28,9 @@ func save_game():
 	file.close()
 
 func load_game():
+	if debug_mode:
+		print("DEBUG: Game not saved.")
+		return  # oprește salvarea dacă e activ debug-ul
 	if not FileAccess.file_exists(SAVE_FILE_PATH):
 		return false
 	
@@ -93,7 +102,7 @@ func _input(event):
 		show_pause_menu()
 		
 		
-	# DEBUG: trece la anotimpul următor cu tasta A
+	# DEBUG: trece la anotimpul următor cu tasta tab
 	if event.is_action_pressed("debug_next_season"):
 		goto_next_season()
 		

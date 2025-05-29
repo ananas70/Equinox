@@ -4,6 +4,12 @@ extends Area2D
 
 var opened := false  # pentru control
 
+func _unhandled_input(event):
+	# debug
+	var game = get_tree().root.get_node("Game")
+	if event.is_action_pressed("win_last_level"):  # definește această acțiune în Input Map
+		open_door()
+
 func _on_body_entered(body):
 	if body.name == "CharacterBody2D":
 		print("La usa!!")
@@ -20,5 +26,6 @@ func open_door():
 	# Wait some more frames
 	await get_tree().create_timer(0.8).timeout
 	
-	# După animația de deschidere -> trecem la următorul anotimp
-	get_node("/root/Game").goto_next_season()
+	# După animația de deschidere
+	var game = get_tree().root.get_node("Game")
+	game.goto_next_season()

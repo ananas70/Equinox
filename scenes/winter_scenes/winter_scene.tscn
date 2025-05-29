@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ja8ctvd3ho2q"]
+[gd_scene load_steps=23 format=3 uid="uid://ja8ctvd3ho2q"]
 
 [ext_resource type="Script" uid="uid://cuer02pggrr4m" path="res://scripts/winter_scripts/winter_game_manager.gd" id="1_1a0hg"]
 [ext_resource type="Texture2D" uid="uid://cq15h25v0qtyg" path="res://assets/sprites/4 - Winter World/Background parts/_Complete_static_BG_(288 x 208)2.png" id="1_7w5uu"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://3116is63edx5" path="res://scenes/winter_scenes/winter_chest.tscn" id="17_1a0hg"]
 [ext_resource type="PackedScene" uid="uid://bqg8bf1bqqh8n" path="res://scenes/door.tscn" id="17_b86ag"]
 [ext_resource type="Texture2D" uid="uid://b86f86xm4cj1b" path="res://assets/sprites/Items/big_inventory_slot.png" id="17_v0kfd"]
+[ext_resource type="AudioStream" uid="uid://bkltbw5vb6ot" path="res://assets/sounds/winter.mp3" id="18_v0kfd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_djbep"]
 distance = 36.75
@@ -60,7 +61,7 @@ _data = {
 &"move": SubResource("Animation_2esdk")
 }
 
-[node name="Node" type="Node"]
+[node name="Node2" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
 script = ExtResource("1_1a0hg")
@@ -280,6 +281,10 @@ collision_mask = 3
 position = Vector2(3973, 472)
 collision_layer = 3
 collision_mask = 3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_v0kfd")
+autoplay = true
 
 [connection signal="key_collected" from="WinterKey" to="GameManager" method="_on_key_collected"]
 [connection signal="key_collected" from="WinterKey" to="CharacterBody2D" method="_on_winter_key_key_collected"]
